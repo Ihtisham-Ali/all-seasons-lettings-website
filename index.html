@@ -89,10 +89,10 @@ h3{font-size:clamp(17px,1.6vw,22px);font-weight:600}
 
 /* ── Top Utility Bar ────────────────────────────────────── */
 #utility-bar{background:var(--navy-950);color:rgba(255,255,255,.75);font-family:var(--ff-body);font-size:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07);position:relative;z-index:101}
-#utility-bar .inner{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.util-address{display:flex;align-items:center;gap:8px;letter-spacing:.02em}
-.util-links{display:flex;align-items:center;gap:clamp(12px,1.5vw,20px)}
-.util-links a{color:rgba(255,255,255,.75);display:inline-flex;align-items:center;gap:6px;transition:color .2s;font-weight:500;text-decoration:none}
+#utility-bar .inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.util-address{display:flex;align-items:center;gap:7px;letter-spacing:.02em;font-size:12px}
+.util-links{display:flex;align-items:center;gap:clamp(16px,2.2vw,28px)}
+.util-links a{color:rgba(255,255,255,.75);display:inline-flex;align-items:center;gap:6px;transition:color .2s;font-weight:500;text-decoration:none;font-size:12px;letter-spacing:.02em}
 .util-links a:hover,.util-links a.active{color:#fff}
 .util-links a.active{color:var(--gold);font-weight:600}
 .util-portal-item{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.55);font-weight:500;cursor:default;user-select:none}
@@ -925,13 +925,13 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
 <div id="utility-bar">
   <div class="container inner">
     <div class="util-address">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gold);opacity:.9;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       <span>538 High Street North, Manor Park, London E12 6QN</span>
     </div>
     <div class="util-links">
       <a href="#" data-page="repair">Report a Repair</a>
       <a href="#" data-page="areas">Areas We Cover</a>
       <a href="#" data-page="resources">Landlord Resources</a>
-      <a href="mailto:pm@allseasonslettings.co.uk" style="color:rgba(255,255,255,.6)">pm@allseasonslettings.co.uk</a>
     </div>
   </div>
 </div>
