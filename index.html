@@ -414,11 +414,11 @@ nav#main-nav{display:flex;align-items:center;gap:clamp(10px,1.2vw,20px);flex-shr
 .ava-send{width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
 
 /* ── Repair Iframe Offset ────────────────────────────────── */
-.repair-iframe-wrap{position:relative;width:100%;height:635px;overflow:hidden;background:#0d0b21}
-.repair-iframe-el{width:100%;height:1150px;border:none;display:block;background:#0d0b21;margin-top:-425px}
+.repair-iframe-wrap{position:relative;width:100%;height:880px;overflow-y:auto;overflow-x:hidden;background:#0d0b21;-webkit-overflow-scrolling:touch}
+.repair-iframe-el{width:100%;height:1350px;border:none;display:block;background:#0d0b21;margin-top:-425px}
 @media (max-width:768px){
-  .repair-iframe-wrap{height:680px}
-  .repair-iframe-el{height:1150px;margin-top:-410px}
+  .repair-iframe-wrap{height:940px}
+  .repair-iframe-el{height:1400px;margin-top:-410px}
 }
 
 /* ── Cards & Interactive Grids ───────────────────────────── */
@@ -836,6 +836,26 @@ nav#main-nav{display:flex;align-items:center;gap:clamp(10px,1.2vw,20px);flex-shr
 .calc-rows{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:12px}
 .calc-row{display:flex;justify-content:space-between;gap:16px;font-size:13px;color:rgba(255,255,255,.55)}
 .calc-row strong{color:#fff}
+
+/* ── Rent Calculator Condition Selector ──────────────────── */
+.calc-cond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+.calc-cond-card{position:relative;display:block;cursor:pointer;margin:0}
+.calc-cond-card input[type="radio"]{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.calc-cond-content{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:14px 8px 12px;background:#fff;border:1.5px solid var(--border-light);border-radius:var(--radius-md);box-shadow:0 1px 3px rgba(0,0,0,.03);transition:all .2s ease;height:100%;user-select:none}
+.calc-cond-card:hover .calc-cond-content{border-color:rgba(192,21,46,.4);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.calc-cond-indicator{width:18px;height:18px;border-radius:50%;border:2px solid var(--n400);background:#fff;display:flex;align-items:center;justify-content:center;transition:all .2s ease;flex-shrink:0}
+.calc-cond-indicator::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--red);transform:scale(0);transition:transform .2s var(--ease-std)}
+.calc-cond-card input[type="radio"]:checked + .calc-cond-content .calc-cond-indicator{border-color:var(--red)}
+.calc-cond-card input[type="radio"]:checked + .calc-cond-content .calc-cond-indicator::after{transform:scale(1)}
+.calc-cond-card input[type="radio"]:checked + .calc-cond-content{border-color:var(--red);background:rgba(192,21,46,.03);box-shadow:0 0 0 1px var(--red),0 4px 14px rgba(192,21,46,.1)}
+.calc-cond-text{display:flex;flex-direction:column;gap:3px}
+.calc-cond-title{font-size:12.5px;font-weight:700;color:var(--navy);line-height:1.25}
+.calc-cond-card input[type="radio"]:checked + .calc-cond-content .calc-cond-title{color:var(--navy-900)}
+.calc-cond-sub{font-size:11px;color:var(--n500);line-height:1.2}
+@media (max-width:580px){
+  .calc-cond-grid{grid-template-columns:1fr;gap:8px}
+  .calc-cond-content{flex-direction:row;align-items:center;text-align:left;padding:12px 14px;gap:12px}
+}
 
 .accordion-item{border-bottom:1px solid var(--border-light)}
 .accordion-trigger{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 0;text-align:left;gap:16px;background:none;border:none;cursor:pointer}
@@ -1612,11 +1632,41 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
             </select>
           </div>
           <div class="form-field">
-            <label>What condition is it in?</label>
-            <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:6px">
-              <label style="display:flex;align-items:center;gap:6px"><input type="radio" name="calc-cond" value="refurb" onchange="updateCalc()"> Newly refurbished</label>
-              <label style="display:flex;align-items:center;gap:6px"><input type="radio" name="calc-cond" value="good" checked onchange="updateCalc()"> Good order</label>
-              <label style="display:flex;align-items:center;gap:6px"><input type="radio" name="calc-cond" value="light" onchange="updateCalc()"> Needs light work</label>
+            <label style="display:flex;justify-content:space-between;align-items:center">
+              <span>What condition is it in?</span>
+              <span style="font-size:11.5px;font-weight:500;color:var(--n500)">Select condition</span>
+            </label>
+            <div class="calc-cond-grid" role="radiogroup" aria-label="Property condition">
+              <label class="calc-cond-card">
+                <input type="radio" name="calc-cond" value="refurb" onchange="updateCalc()">
+                <div class="calc-cond-content">
+                  <div class="calc-cond-indicator"></div>
+                  <div class="calc-cond-text">
+                    <span class="calc-cond-title">Newly refurbished</span>
+                    <span class="calc-cond-sub">Modern / high spec</span>
+                  </div>
+                </div>
+              </label>
+              <label class="calc-cond-card">
+                <input type="radio" name="calc-cond" value="good" checked onchange="updateCalc()">
+                <div class="calc-cond-content">
+                  <div class="calc-cond-indicator"></div>
+                  <div class="calc-cond-text">
+                    <span class="calc-cond-title">Good order</span>
+                    <span class="calc-cond-sub">Clean &amp; let-ready</span>
+                  </div>
+                </div>
+              </label>
+              <label class="calc-cond-card">
+                <input type="radio" name="calc-cond" value="light" onchange="updateCalc()">
+                <div class="calc-cond-content">
+                  <div class="calc-cond-indicator"></div>
+                  <div class="calc-cond-text">
+                    <span class="calc-cond-title">Needs light work</span>
+                    <span class="calc-cond-sub">Minor cosmetic freshen</span>
+                  </div>
+                </div>
+              </label>
             </div>
           </div>
         </div>
