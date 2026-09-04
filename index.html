@@ -93,18 +93,19 @@ h3{font-size:clamp(17px,1.6vw,22px);font-weight:600}
 .util-address{display:flex;align-items:center;gap:8px;letter-spacing:.02em}
 .util-links{display:flex;align-items:center;gap:clamp(12px,1.5vw,20px)}
 .util-links a{color:rgba(255,255,255,.75);display:inline-flex;align-items:center;gap:6px;transition:color .2s;font-weight:500;text-decoration:none}
-.util-links a:hover{color:#fff}
+.util-links a:hover,.util-links a.active{color:#fff}
+.util-links a.active{color:var(--gold);font-weight:600}
 .util-portal-item{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.55);font-weight:500;cursor:default;user-select:none}
 .util-badge{font-size:9.5px;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(212,175,55,.15);color:var(--brass);letter-spacing:.04em;text-transform:uppercase;border:1px solid rgba(212,175,55,.25)}
 
 /* ── Main Site Header ───────────────────────────────────── */
 #site-header{position:sticky;top:0;z-index:100;background:rgba(21,16,43,.96);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:all .3s var(--ease-std)}
 #site-header.scrolled{background:rgba(18,13,38,.98);box-shadow:0 4px 30px rgba(0,0,0,.35)}
-.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:20px}
+.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
 .logo-wrap{display:flex;align-items:center;flex-shrink:0;padding:4px 0}
 .logo-wrap img{height:44px;width:auto;display:block}
 
-nav#main-nav{display:flex;align-items:center;gap:clamp(12px,1.3vw,20px);flex-shrink:1}
+nav#main-nav{display:flex;align-items:center;gap:clamp(14px,1.6vw,24px);flex-shrink:1}
 .nav-link{font-family:var(--ff-body);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);padding:10px 0;position:relative;transition:color .2s;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;gap:5px;background:transparent;border:none;cursor:pointer}
 .nav-link::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease-std)}
 .nav-link:hover,.nav-link.active{color:#fff}
@@ -1104,7 +1105,6 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         </div>
       </div>
 
-      <a href="#" class="nav-link" data-page="areas">Areas We Cover</a>
       <a href="#" class="nav-link" data-page="about">About</a>
     </nav>
 
@@ -4513,7 +4513,7 @@ function goTo(page, anchor, tab) {
     const el = document.getElementById('page-' + p);
     if (el) el.classList.toggle('active', p === page);
   });
-  document.querySelectorAll('.nav-link, .mob-menu-links > a, .mob-sub-link').forEach(a => {
+  document.querySelectorAll('.nav-link, .mob-menu-links > a, .mob-sub-link, .util-links a').forEach(a => {
     a.classList.toggle('active', a.dataset.page === page);
   });
   // Clean up any background slider intervals from hidden pages
