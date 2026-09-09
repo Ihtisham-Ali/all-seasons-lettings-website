@@ -58,6 +58,7 @@ a{color:inherit;text-decoration:none}
 }
 
 body{font-family:var(--ff-body);font-size:16px;line-height:1.6;color:var(--n900);background:#fff;-webkit-font-smoothing:antialiased}
+.as-hp{display:none!important;position:absolute!important;left:-9999px!important;width:0!important;height:0!important;opacity:0!important;pointer-events:none!important}
 h1,h2,h3,h4{font-family:var(--ff-head);font-weight:700;letter-spacing:-0.025em;line-height:1.16}
 h1{font-size:clamp(32px,4.5vw,56px);font-weight:800}
 h2{font-size:clamp(24px,3vw,38px);font-weight:700}
@@ -1731,6 +1732,10 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <div style="flex:1.15 1 480px" data-anim data-anim-delay="2">
           <div class="dark-panel" style="border-radius:var(--radius-lg)">
             <div id="offer-form-body">
+              <div class="as-hp" aria-hidden="true">
+                <label for="offer-hp">Do not fill this</label>
+                <input type="text" id="offer-hp" name="_hp_website" tabindex="-1" autocomplete="off">
+              </div>
               <div id="offer-step-1">
                 <h3 style="color:#fff;margin-bottom:20px">The property</h3>
                 <div class="form-field"><label>Postcode *</label><input type="text" id="offer-pcode" placeholder="e.g. E12 6QN"></div>
@@ -2602,6 +2607,10 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <div style="flex:1.2 1 480px" data-anim>
           <div style="background:#fff;border:1px solid var(--border-light);border-top:3px solid var(--red);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-md)">
             <div id="contact-form-body">
+              <div class="as-hp" aria-hidden="true">
+                <label for="contact-hp">Do not fill this</label>
+                <input type="text" id="contact-hp" name="_hp_website" tabindex="-1" autocomplete="off">
+              </div>
               <h2 style="font-size:20px;margin-bottom:6px">Send us a message</h2>
               <p class="body-sm" style="margin-bottom:24px">We reply the same working day.</p>
               <div style="display:flex;flex-wrap:wrap;gap:16px">
@@ -3130,6 +3139,10 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
             </p>
 
             <form id="comp-lead-form" onsubmit="submitCompLead(event)">
+              <div class="as-hp" aria-hidden="true">
+                <label for="comp-hp">Do not fill this</label>
+                <input type="text" id="comp-hp" name="_hp_website" tabindex="-1" autocomplete="off">
+              </div>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
                 <div class="form-field" style="margin-bottom:0">
                   <label for="comp-lead-name">Full Name *</label>
@@ -3542,6 +3555,10 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         </div>
 
         <form id="form-switch-review" onsubmit="submitSwitchReview(event)">
+          <div class="as-hp" aria-hidden="true">
+            <label for="sw-hp">Do not fill this</label>
+            <input type="text" id="sw-hp" name="_hp_website" tabindex="-1" autocomplete="off">
+          </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
             <div class="form-field" style="margin-bottom:0">
               <label for="sw-name">Full Name *</label>
@@ -3884,6 +3901,10 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         </div>
 
         <form id="form-portfolio-consult" onsubmit="submitPortfolioConsult(event)">
+          <div class="as-hp" aria-hidden="true">
+            <label for="pf-hp">Do not fill this</label>
+            <input type="text" id="pf-hp" name="_hp_website" tabindex="-1" autocomplete="off">
+          </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
             <div class="form-field" style="margin-bottom:0">
               <label for="pf-props">Number of Properties *</label>
@@ -4899,6 +4920,40 @@ function updateCalc() {
   if (yr) yr.textContent = fmt(low * 12);
 }
 
+/* ── Lead Webhook & Anti-Bot Protection ─────────────────── */
+const AS_WEBHOOK_URL = 'https://hook.eu1.make.com/ovfvwoxbg5vi9aylissftpn319s94tm1';
+const AS_PAGE_LOAD_TIME = Date.now();
+
+function sendLeadWebhook(payload, honeypotVal) {
+  // 1. Honeypot check: If filled, silently drop (automated spambot)
+  if (honeypotVal && honeypotVal.trim().length > 0) {
+    console.warn('Submission dropped: Bot honeypot triggered.');
+    return Promise.resolve({ success: false, reason: 'bot_honeypot' });
+  }
+
+  // 2. Velocity check: Reject submissions under 1.5s from initial page render
+  if (Date.now() - AS_PAGE_LOAD_TIME < 1500) {
+    console.warn('Submission dropped: Velocity threshold triggered.');
+    return Promise.resolve({ success: false, reason: 'bot_velocity' });
+  }
+
+  // 3. Attach standard context & metadata
+  payload.timestamp = new Date().toISOString();
+  payload.page_url = window.location.href;
+
+  // 4. Asynchronously send JSON payload to Make.com Webhook
+  return fetch(AS_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).then(res => {
+    return { success: true };
+  }).catch(err => {
+    console.warn('Webhook dispatch note:', err);
+    return { success: false, error: err };
+  });
+}
+
 /* ── Multi-Step Rent Offer Form ─────────────────────────── */
 let offerStep = 1;
 function offerNext() {
@@ -4915,6 +4970,29 @@ function offerNext() {
   } else if (offerStep === 3) {
     const consent = document.getElementById('offer-consent')?.checked;
     if (!consent) { alert('Please tick the consent box to continue.'); return; }
+
+    const hp = document.getElementById('offer-hp')?.value;
+    const pcode = document.getElementById('offer-pcode')?.value.trim() || '';
+    const beds = document.getElementById('offer-beds')?.value || '';
+    const ptype = document.getElementById('offer-ptype')?.value || '';
+    const name = document.getElementById('offer-name')?.value.trim() || '';
+    const phone = document.getElementById('offer-phone')?.value.trim() || '';
+    const email = document.getElementById('offer-email')?.value.trim() || '';
+    const estRent = document.getElementById('calc-output')?.textContent || '';
+
+    sendLeadWebhook({
+      form_name: 'Guaranteed Rent Offer',
+      form_id: 'rent_offer',
+      name,
+      email,
+      phone,
+      postcode: pcode.toUpperCase(),
+      bedrooms: beds,
+      property_type: ptype,
+      estimated_rent: estRent,
+      consent: true
+    }, hp);
+
     document.getElementById('offer-form-body').style.display = 'none';
     document.getElementById('offer-sent').style.display = 'block';
     document.getElementById('offer-actions').style.display = 'none';
@@ -4974,7 +5052,9 @@ function resetRepair() {
 }
 
 function submitContact() {
+  const hp = document.getElementById('contact-hp')?.value;
   const name = document.getElementById('contact-name')?.value.trim();
+  const phone = document.getElementById('contact-phone')?.value.trim() || '';
   const email = document.getElementById('contact-email')?.value.trim();
   const topic = document.getElementById('contact-topic')?.value;
   const msg = document.getElementById('contact-msg')?.value.trim();
@@ -4982,6 +5062,17 @@ function submitContact() {
     alert('Please fill in all required fields.');
     return;
   }
+
+  sendLeadWebhook({
+    form_name: 'Contact Enquiry',
+    form_id: 'contact',
+    name,
+    email,
+    phone,
+    topic,
+    message: msg
+  }, hp);
+
   document.getElementById('contact-form-body').style.display = 'none';
   document.getElementById('contact-sent').style.display = 'block';
 }
@@ -5668,10 +5759,11 @@ function calculateCompliance() {
 
 function submitCompLead(e) {
   e.preventDefault();
+  const hp = document.getElementById('comp-hp')?.value;
   const name = document.getElementById('comp-lead-name')?.value.trim();
   const phone = document.getElementById('comp-lead-phone')?.value.trim();
   const email = document.getElementById('comp-lead-email')?.value.trim();
-  const pcode = compData.pcode || document.getElementById('comp-lead-pcode')?.value.trim();
+  const pcode = compData.pcode || document.getElementById('comp-lead-pcode')?.value.trim() || '';
 
   if (!name || !phone || !email) {
     alert('Please complete your name, phone and email.');
@@ -5682,31 +5774,31 @@ function submitCompLead(e) {
   const redFlags = parseInt((document.getElementById('res-pill-bad')?.textContent.match(/\d+/) || ['0'])[0], 10);
   const amberFlags = parseInt((document.getElementById('res-pill-review')?.textContent.match(/\d+/) || ['0'])[0], 10);
 
-  // Structured diagnostic lead payload prepared for Make.com / API ingestion
+  // Structured diagnostic lead payload sent directly to Make.com Webhook
   const leadPayload = {
-    assessment_timestamp: new Date().toISOString(),
-    overall_score: scoreVal,
+    form_name: 'Compliance Assessment',
+    form_id: 'compliance',
+    name,
+    email,
+    phone,
+    postcode: pcode.toUpperCase(),
+    compliance_score: scoreVal,
     red_flags: redFlags,
     amber_flags: amberFlags,
-    property_type: compData.type,
-    bedrooms: compData.beds,
-    occupancy_type: compData.occupancy,
-    licensing_uncertain: compData.licensing === 'unsure',
-    gas_status: !compData.hasGas ? 'not_applicable' : compData.gasCert,
-    eicr_status: compData.eicr,
-    epc_status: compData.epcStatus === 'valid' ? ('valid_band_' + compData.epcBand) : compData.epcStatus,
-    deposit_status: compData.deposit,
-    inspection_status: compData.inspect,
-    maintenance_status: compData.repairs,
-    contact: {
-      name,
-      phone,
-      email,
-      postcode: pcode.toUpperCase()
-    }
+    property_type: compData.type || '',
+    bedrooms: compData.beds || '',
+    occupancy_type: compData.occupancy || '',
+    licensing_status: compData.licensing || '',
+    gas_status: !compData.hasGas ? 'not_applicable' : (compData.gasCert || ''),
+    eicr_status: compData.eicr || '',
+    epc_status: compData.epcStatus === 'valid' ? ('valid_band_' + compData.epcBand) : (compData.epcStatus || ''),
+    deposit_status: compData.deposit || '',
+    inspection_status: compData.inspect || '',
+    maintenance_status: compData.repairs || ''
   };
 
-  // Secure client-side handover (stored in session memory for webhook integration; NO PII logged to browser console)
+  sendLeadWebhook(leadPayload, hp);
+
   window._complianceLeadSubmission = leadPayload;
 
   document.getElementById('comp-lead-form').style.display = 'none';
@@ -6042,6 +6134,7 @@ function toggleChkItem(el) {
 /* ── Switching Agents Review Handler ─────────────────────── */
 function submitSwitchReview(e) {
   e.preventDefault();
+  const hp = document.getElementById('sw-hp')?.value;
   const name = document.getElementById('sw-name')?.value.trim();
   const email = document.getElementById('sw-email')?.value.trim();
   const phone = document.getElementById('sw-phone')?.value.trim();
@@ -6055,14 +6148,17 @@ function submitSwitchReview(e) {
   }
 
   const payload = {
-    timestamp: new Date().toISOString(),
-    source: 'Switching Managing Agents Review',
-    name, email, phone, postcode: pcode.toUpperCase(),
-    properties: props,
+    form_name: 'Switching Agents Review',
+    form_id: 'switch_agents',
+    name,
+    email,
+    phone,
+    postcode: pcode.toUpperCase(),
+    property_count: props,
     situation
   };
 
-  console.log('Switching Agent Lead Payload:', payload);
+  sendLeadWebhook(payload, hp);
 
   document.getElementById('form-switch-review').style.display = 'none';
   const successBox = document.getElementById('sw-success');
@@ -6076,6 +6172,7 @@ function submitSwitchReview(e) {
 /* ── Portfolio Landlords Consultation Handler ─────────────── */
 function submitPortfolioConsult(e) {
   e.preventDefault();
+  const hp = document.getElementById('pf-hp')?.value;
   const props = document.getElementById('pf-props')?.value;
   const locs = document.getElementById('pf-locs')?.value.trim();
   const types = document.getElementById('pf-types')?.value;
@@ -6090,16 +6187,18 @@ function submitPortfolioConsult(e) {
   }
 
   const payload = {
-    timestamp: new Date().toISOString(),
-    source: 'Portfolio Landlords Consultation',
-    properties: props,
+    form_name: 'Portfolio Consultation',
+    form_id: 'portfolio',
+    name,
+    email,
+    phone,
+    portfolio_size: props,
     locations: locs,
-    propertyTypes: types,
-    currentManagement: current,
-    name, email, phone
+    property_types: types,
+    current_management: current
   };
 
-  console.log('Portfolio Landlord Lead Payload:', payload);
+  sendLeadWebhook(payload, hp);
 
   document.getElementById('form-portfolio-consult').style.display = 'none';
   const successBox = document.getElementById('pf-success');
