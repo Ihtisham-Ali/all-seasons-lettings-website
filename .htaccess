@@ -1,0 +1,155 @@
+# ==============================================================================
+# All Seasons Lettings - Hardened Apache / LiteSpeed Configuration
+# Optimized for high security, speed, browser caching, and zero-script execution
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. REWRITE ENGINE & HTTPS ENFORCEMENT
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Clean URL / SPA fallback: Serve index.html for virtual routes if file doesn't exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 2. MALWARE & SCRIPT EXECUTION LOCKDOWN
+# Completely prevent execution of server-side scripts on this static site
+# ------------------------------------------------------------------------------
+# Deny execution of PHP, Python, Perl, CGI, and shell scripts
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|php8|phps|pl|py|jsp|asp|sh|cgi|bash)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Prevent directory browsing / file tree snooping
+Options -Indexes
+
+# ------------------------------------------------------------------------------
+# 3. PROTECT SENSITIVE & HIDDEN FILES
+# ------------------------------------------------------------------------------
+# Allow Let's Encrypt / SSL verification access
+<IfModule mod_rewrite.c>
+    RewriteRule ^\.well-known/ - [L]
+</IfModule>
+
+# Block direct access to hidden files and directories (like .git, .env, .DS_Store)
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block access to backup, log, and source files
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op]|md|yml|yaml)|~)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Deny,Allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# ------------------------------------------------------------------------------
+# 4. HTTP SECURITY HEADERS
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+
+    # Clickjacking protection (allow same origin)
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # XSS Protection filter for legacy browsers
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Control Referrer Information
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Restrict unnecessary browser device APIs
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # HTTP Strict Transport Security (HSTS) - 1 Year
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+
+    # Remove server banner if possible
+    Header unset X-Powered-By
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 5. GZIP / BROTLI COMPRESSION (mod_deflate)
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 6. BROWSER CACHING (mod_expires)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML: 1 hour (ensures quick updates when new changes deploy)
+    ExpiresByType text/html "access plus 1 hour"
+
+    # Media: Images, Icons, Audio, Video (1 year)
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Web Fonts (1 year)
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+
+    # CSS & JavaScript (1 month)
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 7. CORRECT MIME TYPES
+# ------------------------------------------------------------------------------
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType image/svg+xml .svg .svgz
+    AddType application/font-woff2 .woff2
+    AddType application/font-woff .woff
+</IfModule>

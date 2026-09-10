@@ -1,0 +1,62 @@
+================================================================================
+ALL SEASONS LETTINGS - PRODUCTION DEPLOYMENT PACKAGE
+Prepared for: Damien Mulholland (Hashtag SM)
+================================================================================
+
+WEBSITE SPECIFICATIONS:
+- Architecture: Static HTML5 / Modern CSS3 / Vanilla JavaScript SPA
+- Server Requirements: Any standard Apache / LiteSpeed / Nginx web server
+- Database Required: None (0 MySQL / MariaDB databases)
+- Server-side Scripting: None (0 PHP files required)
+- File Count: ~30 files total (under 0.015% of the 262,000 server inode quota)
+- Storage Footprint: ~2.5 MB total
+
+CONTENTS OF THIS PACKAGE:
+1. index.html                  -> The primary website application
+2. assets/                     -> Directory containing optimized WebP/PNG logos & photography
+3. .htaccess                   -> Hardened Apache/LiteSpeed security & performance rules
+4. DEPLOYMENT_INSTRUCTIONS.txt -> This file
+
+--------------------------------------------------------------------------------
+DEPLOYMENT INSTRUCTIONS (VIA FTP / CPANEL FILE MANAGER):
+--------------------------------------------------------------------------------
+1. Archive / back up the current contents of the company's "public_html" directory.
+2. Clear out the previous website files from "public_html".
+3. Upload the contents of this folder directly into "public_html":
+     - index.html
+     - assets/ (entire folder and subfolders)
+     - .htaccess (ensure hidden files are visible in cPanel File Manager)
+4. Verify file permissions:
+     - Folders: 755
+     - Files: 644
+   (The server process does not require any write permissions as no dynamic files
+    are generated on disk).
+
+--------------------------------------------------------------------------------
+SECURITY & HARDENING FEATURES INCLUDED IN .HTACCESS:
+--------------------------------------------------------------------------------
+✓ Enforces HTTPS automatic 301 redirection.
+✓ Script Execution Lockdown: Completely disables execution of PHP, Python, Perl,
+  and shell scripts (.php, .phtml, .cgi, .sh, etc.) in the web directory.
+✓ Directory Browsing Disabled (Options -Indexes).
+✓ Hidden File & Dotfile Protection: Blocks direct web access to sensitive files (.git, .env, etc.).
+✓ Enterprise Security Headers:
+    - X-Content-Type-Options: nosniff
+    - X-Frame-Options: SAMEORIGIN
+    - X-XSS-Protection: 1; mode=block
+    - Referrer-Policy: strict-origin-when-cross-origin
+    - Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+    - Strict-Transport-Security (HSTS): 1 Year (max-age=31536000)
+✓ Performance Caching: High-efficiency browser caching (mod_expires) for WebP/PNG/fonts
+  and GZIP/Brotli compression (mod_deflate).
+✓ Form Leads: All contact and calculator forms dispatch asynchronously via secure
+  HTTPS webhooks to Make.com/CRM, protected by invisible anti-bot honeypots.
+  Zero PHP mail() execution on this shared host, preventing any server IP blacklisting.
+
+--------------------------------------------------------------------------------
+CONTACT & SUPPORT:
+--------------------------------------------------------------------------------
+If you have any questions or require any adjustments during deployment:
+- Client Contact: Daniel / All Seasons Lettings
+- Developer: Ali
+================================================================================
