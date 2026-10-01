@@ -931,8 +931,22 @@ nav#main-nav{display:flex;align-items:center;gap:clamp(8px,0.9vw,15px);flex-shri
 .page.active{display:block}
 
 footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px solid var(--border)}
-.footer-top{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.footer-top{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;padding-bottom:32px}
 .footer-tagline{font-size:14px;color:rgba(255,255,255,.5);margin-top:16px;max-width:42ch;line-height:1.6}
+/* ── Footer Accreditations & Redress Strip ────────────────── */
+.footer-accreditations{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:22px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.accred-item{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);padding:11px 14px;transition:all .2s ease}
+.accred-item:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);transform:translateY(-1px)}
+.accred-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.accred-emerald{background:rgba(5,150,105,.16);color:#10b981;border:1px solid rgba(5,150,105,.3)}
+.accred-brass{background:rgba(201,169,110,.16);color:var(--brass);border:1px solid rgba(201,169,110,.3)}
+.accred-indigo{background:rgba(79,70,229,.16);color:#818cf8;border:1px solid rgba(79,70,229,.3)}
+.accred-blue{background:rgba(59,130,246,.16);color:#60a5fa;border:1px solid rgba(59,130,246,.3)}
+.accred-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.accred-title{font-size:12px;font-weight:700;color:#fff;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.accred-sub{font-size:11px;color:rgba(255,255,255,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:980px){.footer-accreditations{grid-template-columns:repeat(2,1fr);gap:10px}}
+@media (max-width:520px){.footer-accreditations{grid-template-columns:1fr;gap:8px}}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:40px;padding:40px 0;border-bottom:1px solid var(--border)}
 .footer-col-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px}
 .footer-links{display:grid;gap:10px}
@@ -4589,23 +4603,46 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
       </div>
     </div>
 
-    <!-- Regulatory & Redress Badges Row -->
-    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding:20px 0;margin:24px 0 16px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);font-size:12.5px;color:rgba(255,255,255,.7)">
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 6px var(--emerald)"></span>
-        <span><strong>Property Redress Scheme:</strong> PRS Member No. PRS002684</span>
+    <!-- Regulatory & Redress Badges Strip -->
+    <div class="footer-accreditations">
+      <div class="accred-item">
+        <div class="accred-icon accred-emerald">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="accred-text">
+          <div class="accred-title">Property Redress Scheme</div>
+          <div class="accred-sub">Member No. PRS002684</div>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brass);box-shadow:0 0 6px var(--brass)"></span>
-        <span><strong>Client Money Protection:</strong> CMP Insured</span>
+
+      <div class="accred-item">
+        <div class="accred-icon accred-brass">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <div class="accred-text">
+          <div class="accred-title">Client Money Protection</div>
+          <div class="accred-sub">CMP Insured &amp; Certified</div>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--indigo-light);box-shadow:0 0 6px var(--indigo-light)"></span>
-        <span><strong>Data Protection:</strong> ICO Registered (ZB123894)</span>
+
+      <div class="accred-item">
+        <div class="accred-icon accred-indigo">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="accred-text">
+          <div class="accred-title">Data Protection</div>
+          <div class="accred-sub">ICO Registered · ZB123894</div>
+        </div>
       </div>
-      <div style="display:flex;align-items:center;gap:10px">
-        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff;opacity:.7"></span>
-        <span><strong>Deposit Schemes:</strong> DPS &amp; MyDeposits</span>
+
+      <div class="accred-item">
+        <div class="accred-icon accred-blue">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="accred-text">
+          <div class="accred-title">Deposit Protection</div>
+          <div class="accred-sub">DPS &amp; MyDeposits Registered</div>
+        </div>
       </div>
     </div>
 
