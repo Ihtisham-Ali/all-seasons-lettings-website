@@ -5364,10 +5364,11 @@ function openGuideArticle(id) {
   if (gridView) gridView.style.display = 'none';
   if (articleView) articleView.style.display = 'block';
 
-  // Smooth scroll up to article top
-  const target = document.getElementById('page-resources');
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Keep it straight there: align to article view right below sticky header
+  if (articleView) {
+    const yOffset = -90;
+    const y = articleView.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
   }
 
   // Update browser URL bar
@@ -5383,9 +5384,11 @@ function closeGuideArticle() {
   if (articleView) articleView.style.display = 'none';
   if (gridView) gridView.style.display = 'block';
 
-  const target = document.getElementById('page-resources');
-  if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Keep it straight there: align back to guides grid right below sticky header
+  if (gridView) {
+    const yOffset = -90;
+    const y = gridView.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
   }
 
   if (window.history && window.history.pushState) {
