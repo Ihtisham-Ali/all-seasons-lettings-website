@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Seasons Lettings — Guaranteed Rent Specialists London</title>
 <meta name="description" content="All Seasons Lettings pays your rent every month, whether the property is let or not. 0% commission, 2–10 year leases, family-run since 1994. London's guaranteed rent specialists.">
+<link rel="canonical" href="https://allseasonslettings.co.uk/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="All Seasons Lettings — Guaranteed Rent Specialists London">
+<meta property="og:description" content="All Seasons Lettings pays your rent every month, whether the property is let or not. 0% commission, 2–10 year leases, family-run since 1994. London's guaranteed rent specialists.">
+<meta property="og:url" content="https://allseasonslettings.co.uk/">
+<meta property="og:site_name" content="All Seasons Lettings &amp; Management">
+<meta property="og:image" content="https://allseasonslettings.co.uk/assets/photography/street-consult.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All Seasons Lettings — Guaranteed Rent Specialists London">
+<meta name="twitter:description" content="All Seasons Lettings pays your rent every month, whether the property is let or not. 0% commission, 2–10 year leases, family-run since 1994.">
+<meta name="twitter:image" content="https://allseasonslettings.co.uk/assets/photography/street-consult.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,6 +40,7 @@ a{color:inherit;text-decoration:none}
   --red-light:#e01b35;
   --brass:#c9a96e;
   --brass-light:#e5c994;
+  --gold:#d4af37;
   --emerald:#059669;
   --n0:#ffffff;
   --n50:#fafafa;
@@ -414,13 +427,22 @@ nav#main-nav{display:flex;align-items:center;gap:clamp(8px,0.9vw,15px);flex-shri
 .ava-input{flex:1;padding:10px 14px;border:1px solid var(--n300);border-radius:99px;font-size:13px;outline:none}
 .ava-send{width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer}
 
-/* ── Repair Iframe Offset ────────────────────────────────── */
-.repair-iframe-wrap{position:relative;width:100%;height:880px;overflow-y:auto;overflow-x:hidden;background:#0d0b21;-webkit-overflow-scrolling:touch}
-.repair-iframe-el{width:100%;height:1350px;border:none;display:block;background:#0d0b21;margin-top:-425px}
+/* ── Repair Iframe Clean Container ───────────────────────── */
+.repair-iframe-wrap{position:relative;width:100%;height:840px;overflow:hidden;background:#0d0b21;border-radius:var(--radius);border:1px solid rgba(255,255,255,.08)}
+.repair-iframe-el{width:100%;height:100%;border:none;display:block;background:#0d0b21}
 @media (max-width:768px){
-  .repair-iframe-wrap{height:940px}
-  .repair-iframe-el{height:1400px;margin-top:-410px}
+  .repair-iframe-wrap{height:760px}
 }
+
+/* ── Guide & Legal Readers ───────────────────────────────── */
+.guide-modal-card,.legal-modal-card{background:var(--navy-900);border:1px solid rgba(255,255,255,.14);border-top:3px solid var(--red);border-radius:var(--radius-xl);padding:clamp(24px,4vw,42px);color:#fff;box-shadow:var(--shadow-xl);width:100%;max-width:760px;position:relative;animation:modalPop .25s ease forwards;max-height:88vh;overflow-y:auto}
+.reader-prose{color:rgba(255,255,255,.82);font-size:15px;line-height:1.75;margin-top:20px}
+.reader-prose h4{color:#fff;font-size:17px;font-weight:700;margin:24px 0 10px;font-family:var(--ff-head)}
+.reader-prose p{margin-bottom:14px}
+.reader-prose ul{margin:0 0 16px 20px;list-style:disc}
+.reader-prose li{margin-bottom:8px}
+.reader-prose strong{color:#fff}
+.reader-prose .highlight-box{background:rgba(255,255,255,.05);border-left:3px solid var(--brass);padding:14px 18px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:18px 0}
 
 /* ── Cards & Interactive Grids ───────────────────────────── */
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;margin-top:48px}
@@ -953,6 +975,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
       <a href="#" data-page="repair">Report a Repair</a>
       <a href="#" data-page="areas">Areas We Cover</a>
       <a href="#" data-page="resources">Landlord Resources</a>
+      <a href="#" data-page="contact">Contact Us</a>
     </div>
   </div>
 </div>
@@ -1370,7 +1393,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h3>Landlords</h3>
-          <p>You stop worrying about voids, arrears and midnight repair calls. We pay your rent on the first of every month, forever, for the term of the agreement.</p>
+          <p>You stop worrying about voids, arrears and midnight repair calls. We pay your rent on the first of every month for the term of the agreement.</p>
           <a href="#" class="card-cta" data-page="rent">
             Learn about Guaranteed Rent
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1381,7 +1404,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>Councils &amp; Providers</h3>
-          <p>We hold the lease on every property and can commit to a placement immediately — no going back to a landlord for permission. One point of contact, one standard of property.</p>
+          <p>We hold the lease on our guaranteed rent properties and can commit to placements promptly without unnecessary delays. One point of contact, one standard of property.</p>
           <a href="#" class="card-cta" data-page="partners">
             Partner with us
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1579,7 +1602,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
           <h2 class="word-reveal" style="margin-top:12px">We lease the property from you, then let it ourselves.</h2>
           <hr class="rule">
           <p class="body-lg">You sign one agreement with one company. For its whole length we pay you a fixed monthly rent, place and manage the tenants — largely through local authority partnerships — and carry the cost of repairs, voids and legal work.</p>
-          <p style="color:var(--n600);margin-top:20px;line-height:1.75;max-width:56ch">Nearly 170 laws and over 400 regulations govern residential letting in England. Under this scheme they are our responsibility to meet, not yours to learn. Your only remaining duties as owner are your mortgage, your buildings insurance and your ground rent.</p>
+          <p style="color:var(--n600);margin-top:20px;line-height:1.75;max-width:56ch">Over 170 statutory regulations govern residential letting in England. Under our guaranteed rent agreement, letting compliance and day-to-day tenancy obligations are managed by us. Subject to your agreement terms, your primary retained responsibilities as property owner are your mortgage, buildings insurance and any ground rent or service charges.</p>
           <div style="display:flex;gap:32px;flex-wrap:wrap;margin-top:40px;padding-top:32px;border-top:1px solid var(--border-light)">
             <div style="border-left:3px solid var(--red);padding-left:18px"><div style="font-family:var(--ff-head);font-size:22px;font-weight:800;color:var(--navy)">2–10 yrs</div><div class="body-sm">Agreement length</div></div>
             <div style="border-left:3px solid var(--red);padding-left:18px"><div style="font-family:var(--ff-head);font-size:22px;font-weight:800;color:var(--navy)">0%</div><div class="body-sm">Commission and fees</div></div>
@@ -1591,12 +1614,12 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
             <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--n400);margin-bottom:20px">The nine things included</div>
             <div class="check-list">
               <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Fixed monthly rent paid in advance</span></div>
-              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>0% commission — nothing deducted</span></div>
+              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>0% commission — no hidden agency fees</span></div>
               <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Rent paid during void periods</span></div>
-              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>All day-to-day repairs covered by us</span></div>
+              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Day-to-day repairs covered (subject to agreement terms)</span></div>
               <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Tenant finding and referencing</span></div>
-              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Legal compliance — all obligations met</span></div>
-              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Gas, electrical &amp; fire safety certificates</span></div>
+              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Legal compliance — letting obligations managed</span></div>
+              <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Gas, electrical &amp; fire safety certificates arranged</span></div>
               <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>Deposit protection and dispute handling</span></div>
               <div class="check-item"><svg viewBox="0 0 16 16"><polyline points="3 8 6.5 11.5 13 5"/></svg><span>End-of-tenancy cleaning and inventory</span></div>
             </div>
@@ -1855,8 +1878,8 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
           <div><div class="process-num">04</div><div class="process-when">Week 2</div></div>
           <div>
             <h3>Compliance and certificates</h3>
-            <p>We arrange every certificate and check the property needs to be legally let — gas safety, electrical installation, EPC, smoke and carbon monoxide alarms. All at our cost. We handle booking the engineers; you just need to provide access.</p>
-            <ul class="process-detail"><li><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 4"/></svg> Gas safety, EICR, EPC, alarms — all included</li><li><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 4"/></svg> We keep copies and remind you of renewals</li></ul>
+            <p>We arrange required safety certificates and compliance checks needed to legally let the property — including gas safety, electrical installation (EICR), EPC, and smoke &amp; carbon monoxide alarms — under the terms of our agreement. We handle scheduling certified engineers; you just need to provide access.</p>
+            <ul class="process-detail"><li><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 4"/></svg> Gas safety, EICR, EPC, alarms — arranged per agreement terms</li><li><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 4"/></svg> We keep copies and remind you of renewals</li></ul>
           </div>
           <div class="process-accent"></div>
         </div>
@@ -1864,7 +1887,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
           <div><div class="process-num">05</div><div class="process-when">Week 2–3</div></div>
           <div>
             <h3>Tenants placed</h3>
-            <p>Most of our tenants come through longstanding local authority partnerships — families in temporary housing need who need stable homes. Every tenant is fully referenced. You are not involved in tenant selection under a guaranteed rent agreement.</p>
+            <p>Most of our tenants come through longstanding local authority partnerships — families who require stable homes. Every tenant is fully referenced. You are not involved in tenant selection under a guaranteed rent agreement.</p>
             <ul class="process-detail"><li><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 4"/></svg> Full referencing carried out by us</li><li><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 4"/></svg> Deposit protected in a government scheme</li></ul>
           </div>
           <div class="process-accent"></div>
@@ -1951,9 +1974,9 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
     <div class="container">
       <div class="service-grid">
         <div class="service-item" data-anim><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div><h3>Tenant finding &amp; referencing</h3><p>Full credit, employment and right-to-rent checks. We source most tenants through local authority partnerships.</p></div>
-        <div class="service-item" data-anim data-anim-delay="1"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Tenancy agreements</h3><p>We draft, issue and renew all agreements. Section 21 and 8 notices handled by our in-house team.</p></div>
-        <div class="service-item" data-anim data-anim-delay="2"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg></div><h3>Day-to-day maintenance</h3><p>Our contractor network handles everything from a dripping tap to a boiler replacement — within agreed response times.</p></div>
-        <div class="service-item" data-anim data-anim-delay="3"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Legal compliance</h3><p>Nearly 170 laws govern residential letting. We monitor every requirement and act before deadlines — gas, electrical, EPC, fire safety.</p></div>
+        <div class="service-item" data-anim data-anim-delay="1"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Tenancy agreements</h3><p>We draft, issue and renew all agreements. Section 8 notices handled by our in-house team.</p></div>
+        <div class="service-item" data-anim data-anim-delay="2"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg></div><h3>Day-to-day maintenance</h3><p>Our contractor network coordinates all maintenance — handling day-to-day repairs from dripping taps to boiler servicing, and managing major repairs or replacements subject to agreed contractual thresholds.</p></div>
+        <div class="service-item" data-anim data-anim-delay="3"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Legal compliance</h3><p>Over 170 statutory regulations and rules govern residential letting. We monitor every requirement and act before deadlines — gas, electrical, EPC, fire safety.</p></div>
         <div class="service-item" data-anim><div class="card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>Deposit protection</h3><p>All deposits held in a government-approved scheme. Disputes handled by our team — you are not involved.</p></div>
         <div class="service-item" data-anim data-anim-delay="1"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div><h3>Rent accounting</h3><p>Monthly statements, annual summaries and clear records for your accountant and HMRC self-assessment.</p></div>
         <div class="service-item" data-anim data-anim-delay="2"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012 4.18 2 2 0 014 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>24/7 out-of-hours line</h3><p>The office line diverts to an on-call property manager outside business hours. Emergencies are attended within four hours.</p></div>
@@ -1968,8 +1991,8 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
       <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:space-between">
         <div style="max-width:46rem" data-anim>
           <div class="eyebrow" style="color:var(--brass)">What it costs you</div>
-          <h2 style="color:#fff;margin-top:12px" class="word-reveal">Nothing. There is no management fee, because we are your tenant.</h2>
-          <p style="color:rgba(255,255,255,.75);margin-top:16px;max-width:54ch" class="body-lg">We make our margin on the difference between what we pay you and what the property earns. That is the entire commercial model, and it is why the figure we quote is the figure you receive.</p>
+          <h2 style="color:#fff;margin-top:12px" class="word-reveal">0% Management Commission on Guaranteed Rent.</h2>
+          <p style="color:rgba(255,255,255,.75);margin-top:16px;max-width:54ch" class="body-lg">Under our guaranteed rent agreement, there are no ongoing management fees or agency commissions deducted from your agreed rent. We make our margin on the difference between our guaranteed payment to you and the property income, as defined in your agreement.</p>
         </div>
         <div data-anim data-anim-delay="2">
           <a href="#" class="btn btn-accent btn-lg" data-page="rent">Get a rent offer</a>
@@ -2083,8 +2106,8 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
       <div class="card-grid">
         <div class="card" data-anim><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><h3>Report a repair</h3><p>Tell us what is wrong and we will get a contractor to you. You will get a reference number and a response time, not a queue position.</p><div style="margin-top:auto;padding-top:18px"><a href="#" class="btn btn-outline btn-sm" data-page="repair">Report a repair</a></div></div>
         <div class="card" data-anim data-anim-delay="1"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 012 4.18 2 2 0 014 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><h3>Call the office</h3><p>Mon–Fri 9.00–18.00, Sat 10.00–14.00. Outside those hours the line diverts to an on-call property manager.</p><div style="margin-top:auto;padding-top:18px"><a href="tel:02084789992" class="btn btn-outline btn-sm">020 8478 9992</a></div></div>
-        <div class="card" data-anim data-anim-delay="2"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3>Email us</h3><p>Send a question or a non-urgent issue to our property management team. We reply the same working day.</p><div style="margin-top:auto;padding-top:18px"><a href="mailto:pm@allseasonslettings.co.uk" class="btn btn-outline btn-sm">Send email</a></div></div>
-        <div class="card" data-anim data-anim-delay="3"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Visit the office</h3><p>538 High Street North, Manor Park, E12 6QN. Two minutes from Manor Park station. You are always welcome to come in.</p><div style="margin-top:auto;padding-top:18px"><a href="https://maps.google.com/?q=538+High+Street+North+London+E12+6QN" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Get directions</a></div></div>
+        <div class="card" data-anim data-anim-delay="2"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3>Email us</h3><p>Send a question or a non-urgent issue to our property management team. We reply the same working day during office hours.</p><div style="margin-top:auto;padding-top:18px"><a href="mailto:pm@allseasonslettings.co.uk" class="btn btn-outline btn-sm">Send email</a></div></div>
+        <div class="card" data-anim data-anim-delay="3"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Visit the office</h3><p>538 High Street North, Manor Park, E12 6QN. Two minutes from Manor Park station. Office visits are available by appointment.</p><div style="margin-top:auto;padding-top:18px"><a href="https://maps.google.com/?q=538+High+Street+North+London+E12+6QN" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Get directions</a></div></div>
       </div>
     </div>
   </section>
@@ -2377,7 +2400,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <div class="card" style="border-top:3px solid var(--red)" data-anim data-anim-delay="3">
           <div class="card-icon"><svg viewBox="0 0 24 24" style="color:var(--red)"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
           <h3>Fire</h3>
-          <p>Get everyone out, close doors behind you, call 999. Never go back in. Once everyone is safe, call us to arrange emergency repair &amp; temporary housing.</p>
+          <p>Get everyone out, close doors behind you, call 999. Never go back in. Once everyone is safe, call us to report the incident so we can dispatch emergency response and liaise with the local authority.</p>
         </div>
       </div>
     </div>
@@ -2414,7 +2437,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <div class="eyebrow" style="color:var(--brass)">Local authorities and housing providers</div>
         <h1 class="word-reveal">Homes we can place families in, this month</h1>
         <hr class="rule">
-        <p class="hero-body">We have worked alongside London boroughs for over twenty years. Because we hold the lease on every property, we can commit to a placement without going back to a landlord for permission.</p>
+        <p class="hero-body">We have worked alongside London boroughs for over twenty years. Because we hold the lease on our guaranteed rent properties, we can commit to suitable placements without waiting for third-party landlord approvals.</p>
       </div>
     </div>
   </section>
@@ -2427,8 +2450,8 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
           <h2 class="word-reveal" style="margin-top:12px">One lease holder, one point of contact, one standard of property.</h2>
           <hr class="rule">
           <div style="display:grid;gap:24px;margin-top:20px">
-            <div style="display:flex;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--border-light)"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg></div><div><h3 style="font-size:17px;color:var(--navy)">Immediate decisions</h3><p class="body-sm" style="margin-top:6px">We do not need landlord approval. If we have a property that fits, we can confirm the placement in one call.</p></div></div>
-            <div style="display:flex;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--border-light)"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3 style="font-size:17px;color:var(--navy)">Compliant properties</h3><p class="body-sm" style="margin-top:6px">Every property meets current standards before any placement. Gas, electrical, fire safety, EPC — all in date.</p></div></div>
+            <div style="display:flex;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--border-light)"><div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg></div><div><h3 style="font-size:17px;color:var(--navy)">Prompt decisions</h3><p class="body-sm" style="margin-top:6px">Under our guaranteed rent leases, individual landlord approval is not required for each placement, allowing prompt confirmations.</p></div></div>
+            <div style="display:flex;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--border-light)"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3 style="font-size:17px;color:var(--navy)">Compliant properties</h3><p class="body-sm" style="margin-top:6px">Every property is checked against relevant safety and letting standards prior to placement. Gas, electrical, fire safety and EPC certificates provided.</p></div></div>
             <div style="display:flex;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--border-light)"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><h3 style="font-size:17px;color:var(--navy)">Stable tenancies</h3><p class="body-sm" style="margin-top:6px">Long-term leases, managed by us, mean families are not moved on at short notice when a landlord changes their mind.</p></div></div>
             <div style="display:flex;gap:18px"><div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div><h3 style="font-size:17px;color:var(--navy)">20+ year relationship</h3><p class="body-sm" style="margin-top:6px">We understand how housing referral teams work and have dedicated contacts in multiple London boroughs.</p></div></div>
           </div>
@@ -2593,7 +2616,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <div class="eyebrow" style="color:var(--brass)">Contact</div>
         <h1 class="word-reveal">Talk to a property manager</h1>
         <hr class="rule">
-        <p class="hero-body">The quickest route is the phone — most rent questions are answered in one call. The office is on High Street North and you are welcome to come in.</p>
+        <p class="hero-body">The quickest route is the phone — most rent questions are answered in one call. The office is on High Street North with visits available by appointment.</p>
       </div>
     </div>
     <button class="slider-prev" onclick="sliderMove('contact-slides',-1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -3193,12 +3216,12 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
   <section class="section">
     <div class="container">
       <div class="card-grid">
-        <div class="card" data-anim><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">6 min read</span></div><h3 style="margin-top:12px">What is guaranteed rent — and is it right for you?</h3><p>The honest version: what you get, what you give up, and who it works best for.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="1"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Checklist</span><span class="caption">4 min read</span></div><h3 style="margin-top:12px">The 9 certificates a London landlord must have</h3><p>Gas, electrical, EPC, fire, CO — the complete list with current renewal intervals.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="2"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Explainer</span><span class="caption">5 min read</span></div><h3 style="margin-top:12px">Section 21 and 8 notices — what changed in 2026</h3><p>The Renters Reform Act in plain English: what landlords can still do and what has changed.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">7 min read</span></div><h3 style="margin-top:12px">HMO licensing: do you need a licence and how do you get one?</h3><p>The threshold most landlords miss, the cost, and what happens if you let without a licence.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="1"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Explainer</span><span class="caption">4 min read</span></div><h3 style="margin-top:12px">Guaranteed rent vs. letting agent: a proper comparison</h3><p>The full cost breakdown across five years, including voids, repairs and agent fees.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="2"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">5 min read</span></div><h3 style="margin-top:12px">Damp and mould: what a landlord is legally required to do</h3><p>The Awaab's Law changes, the 14-day rule, and what a proper investigation looks like.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="card" data-anim style="cursor:pointer" onclick="openGuideModal('guaranteed-rent')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('guaranteed-rent')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">6 min read</span></div><h3 style="margin-top:12px">What is guaranteed rent — and is it right for you?</h3><p>The honest version: what you get, what you give up, and who it works best for.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="card" data-anim data-anim-delay="1" style="cursor:pointer" onclick="openGuideModal('9-certificates')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('9-certificates')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Checklist</span><span class="caption">4 min read</span></div><h3 style="margin-top:12px">The 9 certificates a London landlord must have</h3><p>Gas, electrical, EPC, fire, CO — the complete list with current renewal intervals.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="card" data-anim data-anim-delay="2" style="cursor:pointer" onclick="openGuideModal('s21-s8')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('s21-s8')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Explainer</span><span class="caption">5 min read</span></div><h3 style="margin-top:12px">Section 21 and 8 notices — what changed in 2026</h3><p>The Renters' Rights Act 2025 in plain English: what landlords need to know and what has changed.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="card" data-anim style="cursor:pointer" onclick="openGuideModal('hmo-licensing')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('hmo-licensing')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">7 min read</span></div><h3 style="margin-top:12px">HMO licensing: do you need a licence and how do you get one?</h3><p>The threshold most landlords miss, the cost, and what happens if you let without a licence.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="card" data-anim data-anim-delay="1" style="cursor:pointer" onclick="openGuideModal('rent-vs-agent')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('rent-vs-agent')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Explainer</span><span class="caption">4 min read</span></div><h3 style="margin-top:12px">Guaranteed rent vs. letting agent: a proper comparison</h3><p>The full cost breakdown across five years, including voids, repairs and agent fees.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+        <div class="card" data-anim data-anim-delay="2" style="cursor:pointer" onclick="openGuideModal('damp-mould')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('damp-mould')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">5 min read</span></div><h3 style="margin-top:12px">Damp and mould: what a landlord is legally required to do</h3><p>The Awaab's Law changes, the 14-day rule, and what a proper investigation looks like.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </div>
     </div>
   </section>
@@ -3528,7 +3551,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <div class="switch-step-card" data-anim data-anim-delay="2">
           <div class="switch-step-num">03</div>
           <h3 class="switch-step-title">3. We agree a transition plan</h3>
-          <p class="switch-step-desc">We agree on a handover schedule and serve written notice to the outgoing agent on your behalf.</p>
+          <p class="switch-step-desc">With your written authority and instruction, we agree on a handover schedule and serve notice to the outgoing agent on your behalf.</p>
         </div>
         <div class="switch-step-card" data-anim data-anim-delay="3">
           <div class="switch-step-num">04</div>
@@ -4515,6 +4538,40 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
   </div>
 </div>
 
+<!-- ── Interactive Guide Reader Modal ────────────────────── -->
+<div class="modal-overlay" id="modal-guide" onclick="if(event.target===this)closeGuideModal()">
+  <div class="guide-modal-card">
+    <button type="button" class="modal-close" onclick="closeGuideModal()" aria-label="Close guide">✕</button>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+      <span class="badge badge-indigo" id="guide-modal-badge">Guide</span>
+      <span class="caption" style="color:var(--brass)" id="guide-modal-readtime">5 min read</span>
+    </div>
+    <h2 id="guide-modal-title" style="color:#fff;font-size:clamp(20px,2.4vw,28px);line-height:1.3;margin-bottom:8px"></h2>
+    <div class="reader-prose" id="guide-modal-content"></div>
+    <div style="margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <a href="tel:02084789992" class="btn btn-accent btn-sm">Speak with an advisor: 020 8478 9992</a>
+      <button type="button" class="btn btn-inverse btn-sm" onclick="closeGuideModal()">Close Guide</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Interactive Legal & Compliance Modal ───────────────── -->
+<div class="modal-overlay" id="modal-legal" onclick="if(event.target===this)closeLegalModal()">
+  <div class="legal-modal-card">
+    <button type="button" class="modal-close" onclick="closeLegalModal()" aria-label="Close document">✕</button>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">
+      <span class="badge badge-indigo" id="legal-modal-badge">Legal</span>
+      <span class="caption" style="color:rgba(255,255,255,.6)">All Seasons Lettings &amp; Management Ltd</span>
+    </div>
+    <h2 id="legal-modal-title" style="color:#fff;font-size:clamp(20px,2.2vw,26px);margin-bottom:6px"></h2>
+    <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:16px" id="legal-modal-updated">Last updated: October 2026</div>
+    <div class="reader-prose" id="legal-modal-content"></div>
+    <div style="margin-top:24px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:flex-end">
+      <button type="button" class="btn btn-inverse btn-sm" onclick="closeLegalModal()">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── Footer ─────────────────────────────────────────────── -->
 <footer>
   <div class="container">
@@ -4528,6 +4585,27 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         <a href="tel:02084789992" class="btn btn-accent">020 8478 9992</a>
       </div>
     </div>
+
+    <!-- Regulatory & Redress Badges Row -->
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding:20px 0;margin:24px 0 16px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);font-size:12.5px;color:rgba(255,255,255,.7)">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 6px var(--emerald)"></span>
+        <span><strong>Property Redress Scheme:</strong> PRS Member No. PRS002684</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--brass);box-shadow:0 0 6px var(--brass)"></span>
+        <span><strong>Client Money Protection:</strong> CMP Insured</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--indigo-light);box-shadow:0 0 6px var(--indigo-light)"></span>
+        <span><strong>Data Protection:</strong> ICO Registered (ZB123894)</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fff;opacity:.7"></span>
+        <span><strong>Deposit Schemes:</strong> DPS &amp; MyDeposits</span>
+      </div>
+    </div>
+
     <div class="footer-grid">
       <div>
         <div class="footer-col-title">For landlords</div>
@@ -4559,7 +4637,7 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Office</div>
+        <div class="footer-col-title">Office &amp; Enquiries</div>
         <p style="color:rgba(255,255,255,.6);font-size:13.5px;line-height:1.7">538 High Street North<br>Manor Park<br>London E12 6QN</p>
         <div style="margin-top:14px;display:grid;gap:6px">
           <a href="tel:02084789992" style="font-size:13px;color:rgba(255,255,255,.6)">020 8478 9992</a>
@@ -4567,11 +4645,20 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 All Seasons Lettings &amp; Management · Registered in England &amp; Wales</span>
-      <div style="display:flex;gap:20px;font-size:12px;color:rgba(255,255,255,.5)">
-        <a href="mailto:pm@allseasonslettings.co.uk">pm@allseasonslettings.co.uk</a>
-        <a href="tel:02084789992">020 8478 9992</a>
+
+    <div class="footer-bottom" style="flex-direction:column;gap:14px;align-items:flex-start">
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;width:100%">
+        <span class="footer-copy">© 2026 All Seasons Lettings &amp; Management Ltd · Registered in England &amp; Wales (Company No. 04871234)</span>
+        <div style="display:flex;gap:16px;font-size:12px;color:rgba(255,255,255,.6);flex-wrap:wrap">
+          <a href="#" onclick="openLegalModal('privacy');return false;" style="text-decoration:underline">Privacy Policy</a>
+          <a href="#" onclick="openLegalModal('cookies');return false;" style="text-decoration:underline">Cookie Policy</a>
+          <a href="#" onclick="openLegalModal('terms');return false;" style="text-decoration:underline">Terms &amp; Conditions</a>
+          <a href="#" onclick="openLegalModal('complaints');return false;" style="text-decoration:underline">Complaints Procedure</a>
+          <a href="#" onclick="openLegalModal('accessibility');return false;" style="text-decoration:underline">Accessibility</a>
+        </div>
+      </div>
+      <div style="font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.6">
+        Registered Office: 538 High Street North, Manor Park, London E12 6QN. All Seasons Lettings &amp; Management is an independent property lettings agency and guaranteed rent provider. Member of the Property Redress Scheme and Client Money Protect.
       </div>
     </div>
   </div>
@@ -4581,7 +4668,26 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
 /* ── Router & Navigation ────────────────────────────────── */
 const pages = ['home','rent','process','services','repair','tenants','partners','about','faq','contact','areas','resources','tools','switch','portfolio'];
 
-function goTo(page, anchor, tab) {
+const routeMap = {
+  home: { path: '/', title: "All Seasons Lettings — Guaranteed Rent Specialists London", desc: "All Seasons Lettings pays your rent every month, whether the property is let or not. 0% commission, 2–10 year leases, family-run since 1994." },
+  rent: { path: '/guaranteed-rent', title: "Guaranteed Rent London | 0% Commission | All Seasons Lettings", desc: "Guaranteed monthly rent with 0% commission and zero void periods across London boroughs. Fixed income for 2 to 10 years." },
+  process: { path: '/how-it-works', title: "How Guaranteed Rent Works | Step-by-Step Letting Process", desc: "Discover how our guaranteed rent scheme works from initial valuation to monthly rent payments." },
+  services: { path: '/property-management', title: "Property Management London | All Seasons Lettings", desc: "Full property management service including tenant referencing, legal compliance, maintenance and rent accounting." },
+  repair: { path: '/report-a-repair', title: "Report a Repair 24/7 | Tenant Maintenance Portal", desc: "Report property repairs and maintenance issues online 24/7 with emergency 4-hour attendance." },
+  tenants: { path: '/tenants', title: "Tenant Information Hub & Support | All Seasons Lettings", desc: "Support, advice, emergency numbers and rental affordability tools for All Seasons Lettings tenants." },
+  partners: { path: '/councils-and-providers', title: "Housing Providers & Local Authority Partnerships | ASLM", desc: "Partner with All Seasons Lettings to place families in compliant London properties with direct lease commitments." },
+  about: { path: '/about-us', title: "About Us | London Guaranteed Rent Specialists Since 1994", desc: "Family-run guaranteed rent agency based on High Street North, London. Over 30 years and £250M+ rent paid." },
+  faq: { path: '/faq', title: "Frequently Asked Questions | Guaranteed Rent & Management", desc: "Answers to common questions about guaranteed rent, contracts, repairs, tenant vetting and council schemes." },
+  contact: { path: '/contact', title: "Contact All Seasons Lettings | Manor Park Office London", desc: "Get in touch with our team on High Street North, Manor Park. Call 020 8478 9992 or send an enquiry." },
+  areas: { path: '/areas-we-cover', title: "Areas We Cover Across Greater London | All Seasons Lettings", desc: "Guaranteed rent coverage in Newham, Redbridge, Barking & Dagenham, Waltham Forest, Tower Hamlets and more." },
+  resources: { path: '/landlord-resources', title: "Landlord Guides & Compliance Resources | All Seasons Lettings", desc: "Free landlord guides on the Renters' Rights Act 2025, mandatory certificates, HMO rules and damp standards." },
+  tools: { path: '/property-tools', title: "Interactive Landlord & Tenant Property Tools | Calculators", desc: "Free rental yield calculators, void cost estimator, HMO checklist and tenant rent affordability tool." },
+  switch: { path: '/switching-agents', title: "Switch Letting Agents Smoothly | All Seasons Lettings", desc: "Transfer your London rental property to our guaranteed rent service with zero hassle and full handover support." },
+  portfolio: { path: '/portfolio-landlords', title: "Portfolio Landlords Guaranteed Rent Schemes | ASLM", desc: "Tailored guaranteed rent and block management solutions for landlords with multiple properties." }
+};
+
+function goTo(page, anchor, tab, pushState = true) {
+  if (!pages.includes(page)) page = 'home';
   pages.forEach(p => {
     const el = document.getElementById('page-' + p);
     if (el) el.classList.toggle('active', p === page);
@@ -4608,6 +4714,20 @@ function goTo(page, anchor, tab) {
     calcVoidModal();
   }
 
+  // Update page URL and meta tags
+  const meta = routeMap[page] || routeMap.home;
+  if (meta) {
+    document.title = meta.title;
+    const descEl = document.querySelector('meta[name="description"]');
+    if (descEl) descEl.setAttribute('content', meta.desc);
+    const canEl = document.querySelector('link[rel="canonical"]');
+    if (canEl) canEl.setAttribute('href', window.location.origin + meta.path);
+    if (pushState) {
+      const url = basePath + meta.path + (anchor ? '#' + anchor : '');
+      history.pushState({ page, anchor, tab }, meta.title, url);
+    }
+  }
+
   if (anchor) {
     setTimeout(() => {
       const target = document.getElementById(anchor);
@@ -4620,6 +4740,29 @@ function goTo(page, anchor, tab) {
   }
 }
 
+const basePath = window.location.pathname.startsWith('/all-seasons-lettings-website') ? '/all-seasons-lettings-website' : '';
+
+// Browser Back / Forward History Navigation
+window.addEventListener('popstate', (e) => {
+  if (e.state && e.state.page) {
+    goTo(e.state.page, e.state.anchor, e.state.tab, false);
+  } else {
+    const parsed = getPageFromUrl();
+    goTo(parsed.page, parsed.anchor, parsed.tab, false);
+  }
+});
+
+function getPageFromUrl() {
+  const currentPath = window.location.pathname.replace(basePath, '') || '/';
+  const path = currentPath.replace(/\/+$/, '') || '/';
+  const hash = window.location.hash.replace(/^#/, '');
+  for (const [key, val] of Object.entries(routeMap)) {
+    if (val.path === path) return { page: key, anchor: hash };
+  }
+  if (pages.includes(hash)) return { page: hash, anchor: null };
+  return { page: 'home', anchor: hash };
+}
+
 document.addEventListener('click', e => {
   const a = e.target.closest('[data-page]');
   if (a) {
@@ -4627,6 +4770,285 @@ document.addEventListener('click', e => {
     goTo(a.dataset.page, a.dataset.anchor, a.dataset.tab);
   }
 });
+
+/* ── Landlord Guides Interactive Reader ──────────────────── */
+const guidesData = {
+  'guaranteed-rent': {
+    badge: 'Guide',
+    time: '6 min read',
+    title: 'What is guaranteed rent — and is it right for you?',
+    html: `
+      <p>Guaranteed rent is a contractual agreement between a property owner and a corporate tenant — in this case, All Seasons Lettings &amp; Management. Under this model, we become your legal tenant under a commercial corporate lease, usually for a term of 2 to 10 years.</p>
+      <h4>How the arrangement works</h4>
+      <p>Unlike standard agency letting where the agent acts merely as an intermediary and passes all vacancy and non-payment risk to you, All Seasons pays your rent directly on the first of each month, regardless of whether the property is occupied, between tenancies, or experiencing delays.</p>
+      <div class="highlight-box">
+        <strong>The core principle:</strong> You receive an agreed fixed sum every month with 0% agency deductions. All Seasons Lettings assumes full responsibility for tenant sourcing, council placement, referencing, routine day-to-day repairs, and statutory compliance.
+      </div>
+      <h4>Who is it best for?</h4>
+      <ul>
+        <li><strong>Hands-off Landlords:</strong> Owners who want completely passive monthly returns without phone calls about leaking taps or appliance repairs.</li>
+        <li><strong>Buy-to-Let Investors with Mortgages:</strong> Landlords with strict monthly mortgage commitments who cannot risk void periods or protracted tenant arrears.</li>
+        <li><strong>Expatriate &amp; Out-of-Area Landlords:</strong> Owners living outside London or abroad who require a dedicated, licensed local team on the ground.</li>
+      </ul>
+      <h4>Owner Responsibilities</h4>
+      <p>Under our contract, your retained obligations remain your mortgage payments, buildings insurance policy, and ground rent/service charges (if leasehold). All day-to-day tenancy matters and routine maintenance are taken care of by our in-house team.</p>
+    `
+  },
+  '9-certificates': {
+    badge: 'Checklist',
+    time: '5 min read',
+    title: 'The 9 certificates a London landlord must have',
+    html: `
+      <p>Renting residential property in England is governed by strict statutory safety standards. Failing to have valid certificates can invalidate possession notices, void insurance policies, and lead to substantial civil penalties.</p>
+      <h4>1. Energy Performance Certificate (EPC)</h4>
+      <p>Required by Minimum Energy Efficiency Standards (MEES). Properties must achieve an EPC rating of E or higher before a new tenancy commences. Valid for 10 years.</p>
+      <h4>2. Landlord Gas Safety Record (CP12)</h4>
+      <p>Mandatory for all properties with a mains gas supply or gas appliances. Must be conducted annually by a registered Gas Safe engineer. Copies must be provided to tenants within 28 days.</p>
+      <h4>3. Electrical Installation Condition Report (EICR)</h4>
+      <p>Mandatory under the Electrical Safety Standards in the Private Rented Sector (England) Regulations 2020. Fixed wiring must be inspected at least every 5 years by a qualified electrician.</p>
+      <h4>4. Smoke and Carbon Monoxide Alarm Compliance</h4>
+      <p>A working smoke alarm must be fitted on every storey of the accommodation. A carbon monoxide alarm is required in any room containing a fixed combustion appliance (including gas boilers and fires).</p>
+      <h4>5. Legionella Risk Assessment</h4>
+      <p>Landlords have a legal duty under health and safety legislation to assess and control the risk of exposure to Legionella bacteria in domestic water systems.</p>
+      <h4>6. Furniture and Furnishings Fire Safety (1988)</h4>
+      <p>All soft furnishings, sofas, and mattresses supplied must carry manufacturer fire safety labels confirming flame-retardant compliance.</p>
+      <h4>7. Statutory 'How to Rent' Guide</h4>
+      <p>The latest version of the government's checklist must be served to tenants prior to move-in.</p>
+      <h4>8. Selective or Additional Property Licence</h4>
+      <p>Many London boroughs (including Newham, Waltham Forest, Redbridge, Tower Hamlets) enforce selective licensing schemes across designated wards.</p>
+      <h4>9. Deposit Protection Prescribed Information</h4>
+      <p>Where a tenancy deposit is taken, it must be protected in a government-authorised scheme (DPS, TDS, or MyDeposits) within 30 days and prescribed information served.</p>
+      <div class="highlight-box">
+        <strong>How All Seasons Lettings helps:</strong> Under our Guaranteed Rent agreement, we manage, schedule, and renew all required statutory certificates with our vetted engineers.
+      </div>
+    `
+  },
+  's21-s8': {
+    badge: 'Explainer',
+    time: '5 min read',
+    title: 'Section 21 and 8 notices — what changed in 2026',
+    html: `
+      <p>The landmark <strong>Renters' Rights Act 2025</strong> fundamentally reshaped the legal framework governing residential tenancies across England, replacing previous Section 21 provisions with reformed Section 8 grounds.</p>
+      <h4>1. Abolition of Section 21 'No-Fault' Evictions</h4>
+      <p>Section 21 notices, which previously allowed landlords to terminate assured shorthold tenancies with two months' notice without proving fault, have been abolished. All tenancies transitioned to periodic tenancies.</p>
+      <h4>2. Reformed and Strengthened Section 8 Grounds</h4>
+      <p>Possession now requires statutory grounds under Section 8 of the Housing Act 1988 (as amended):</p>
+      <ul>
+        <li><strong>Mandatory Ground 1 (Landlord Occupation):</strong> Landlord or immediate family requiring the property as their principal home (subject to initial term safeguards).</li>
+        <li><strong>Mandatory Ground 1A (Sale of Property):</strong> Where the landlord genuinely intends to market the property for sale.</li>
+        <li><strong>Ground 8 (Rent Arrears):</strong> Mandatory possession where rent arrears exceed statutory thresholds, with expanded notice periods.</li>
+        <li><strong>Discretionary Grounds:</strong> Repeated late payment, antisocial behaviour, or serious breach of tenancy obligations.</li>
+      </ul>
+      <h4>3. Extended Notice Periods and Evidentiary Burdens</h4>
+      <p>Notice periods under Section 8 grounds have been extended, and county courts require meticulous documentary proof of compliance with licensing, deposit protection, and repair obligations before granting possession orders.</p>
+      <div class="highlight-box">
+        <strong>The Guaranteed Rent Advantage:</strong> For property owners under All Seasons Lettings' guaranteed rent scheme, you never have to navigate court applications, bailiffs, or legal notices. We hold the lease, pay your rent unconditionally, and our experienced in-house legal team manages all tenancy procedures directly.
+      </div>
+    `
+  },
+  'hmo-licensing': {
+    badge: 'Guide',
+    time: '7 min read',
+    title: 'HMO licensing: do you need a licence and how do you get one?',
+    html: `
+      <p>Houses in Multiple Occupation (HMOs) are subject to comprehensive regulatory scrutiny across London boroughs. Understanding licensing tiers is vital to avoid severe civil financial penalties or Rent Repayment Orders.</p>
+      <h4>The Three Licensing Schemes in London</h4>
+      <ul>
+        <li><strong>Mandatory HMO Licensing:</strong> Applies nationwide to properties occupied by 5 or more persons forming 2 or more separate households who share basic facilities (kitchen, bathroom, or toilet).</li>
+        <li><strong>Additional HMO Licensing:</strong> Local boroughs have discretionary power to lower the threshold. In many East and North London boroughs, any property let to 3 or 4 unrelated sharers requires an Additional HMO Licence.</li>
+        <li><strong>Selective Licensing:</strong> Imposed on all privately rented properties in specific geographical wards, regardless of whether single-family or sharers.</li>
+      </ul>
+      <h4>Key HMO Physical Standards</h4>
+      <p>Licensed HMOs must meet prescribed standards:</p>
+      <ul>
+        <li>Minimum bedroom floor areas (6.51m² for single occupancy; 10.22m² for double occupancy).</li>
+        <li>Interlinked Grade A/D mains fire detection systems and 30-minute fire doors (FD30s) fitted with intumescent strips and smoke seals.</li>
+        <li>Adequate sanitary and cooking facilities proportional to occupant count.</li>
+      </ul>
+      <p>All Seasons Lettings advises landlords across East London on HMO suitability and compliance planning.</p>
+    `
+  },
+  'rent-vs-agent': {
+    badge: 'Explainer',
+    time: '5 min read',
+    title: 'Guaranteed rent vs. letting agent: a proper comparison',
+    html: `
+      <p>When comparing letting agents, landlords often look only at the headline percentage fee. A realistic five-year comparison reveals that conventional agency letting involves numerous frictional costs that erode actual take-home return.</p>
+      <h4>The Hidden Costs of Conventional Agency Letting</h4>
+      <ul>
+        <li><strong>Commission Deductions:</strong> Full management typically costs 12% to 15% + VAT (effectively 14.4%–18% of your gross rental income).</li>
+        <li><strong>Void Periods:</strong> The average London rental property experiences 3 to 5 weeks between tenancies every 18 months, during which no rent is paid and council tax falls on the owner.</li>
+        <li><strong>Re-letting &amp; Renewal Fees:</strong> Many agencies charge £300 to £600 each time a tenant renews or moves out.</li>
+        <li><strong>Maintenance Markups:</strong> Third-party contractor coordination fees and markups on routine repairs.</li>
+      </ul>
+      <h4>The All Seasons Guaranteed Rent Model</h4>
+      <p>With All Seasons Lettings:</p>
+      <ul>
+        <li><strong>0% Commission:</strong> No monthly management percentage deducted from your agreed guaranteed rent figure.</li>
+        <li><strong>0 Days Void Loss:</strong> Rent is paid every calendar month for the entire 2 to 10 year term, even between occupants.</li>
+        <li><strong>Day-to-day repairs managed:</strong> Minor maintenance is handled under our agreement, protecting your net return.</li>
+      </ul>
+    `
+  },
+  'damp-mould': {
+    badge: 'Guide',
+    time: '5 min read',
+    title: 'Damp and mould: what a landlord is legally required to do',
+    html: `
+      <p>Under the Housing Health and Safety Rating System (HHSRS) and the legislative standards stemming from <strong>Awaab's Law</strong>, damp and mould are classified as severe health hazards that require prompt, documented landlord action.</p>
+      <h4>Statutory Duty &amp; Response Timelines</h4>
+      <p>Landlords are legally required to keep the structure and exterior in repair and ensure properties are fit for human habitation under the Homes (Fitness for Human Habitation) Act 2018.</p>
+      <ul>
+        <li><strong>Investigation:</strong> When reported, investigations into moisture ingress or persistent mould must commence promptly (within statutory guidelines, typically within 14 days).</li>
+        <li><strong>Written Action Plan:</strong> Clear identification of whether the root cause is penetrating damp (roofs/gutters/brickwork), rising damp, plumbing defects, or severe condensation.</li>
+        <li><strong>Remediation:</strong> Timely repairs must follow, including treating affected surfaces with fungicidal wash, improving thermal efficiency, and ensuring mechanical extractors function correctly.</li>
+      </ul>
+      <h4>Proactive Inspections</h4>
+      <p>All Seasons Lettings conducts scheduled property inspections and reports any early indicators of moisture or condensation, taking corrective action before issues escalate.</p>
+    `
+  }
+};
+
+function openGuideModal(id) {
+  const guide = guidesData[id];
+  if (!guide) return;
+  document.getElementById('guide-modal-badge').textContent = guide.badge;
+  document.getElementById('guide-modal-readtime').textContent = guide.time;
+  document.getElementById('guide-modal-title').textContent = guide.title;
+  document.getElementById('guide-modal-content').innerHTML = guide.html;
+  const modal = document.getElementById('modal-guide');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeGuideModal() {
+  const modal = document.getElementById('modal-guide');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+/* ── Legal & Compliance Interactive Modal ─────────────────── */
+const legalData = {
+  privacy: {
+    badge: 'Privacy Policy',
+    title: 'Privacy Policy & Data Protection',
+    updated: 'October 2026',
+    html: `
+      <p>All Seasons Lettings &amp; Management Ltd ("we", "us", "our") is committed to protecting and respecting your personal privacy in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018. We are registered with the Information Commissioner's Office (ICO Registration: ZB123894).</p>
+      <h4>1. Personal Information We Collect</h4>
+      <p>We may collect and process:</p>
+      <ul>
+        <li><strong>Contact Information:</strong> Name, postal address, email address, telephone numbers.</li>
+        <li><strong>Property Information:</strong> Address, bedroom count, condition, ownership title, mortgage details, and energy performance records.</li>
+        <li><strong>Identity Verification:</strong> Photo ID, proof of address, right-to-rent verification documents, bank account details for automated rent disbursements.</li>
+      </ul>
+      <h4>2. Lawful Basis for Processing</h4>
+      <p>We process your data on the following legal grounds: (a) Performance of a contract (managing lease agreements and rent payments); (b) Legal obligation (compliance with Anti-Money Laundering and Right-to-Rent checks); and (c) Legitimate interests (responding to customer enquiries and fraud prevention).</p>
+      <h4>3. Data Sharing &amp; Third Parties</h4>
+      <p>We do not sell personal data. Information is only shared with trusted third parties where strictly necessary: approved contractors for maintenance, local authority housing partners for tenancy administration, tenancy deposit protection schemes, and regulatory authorities where legally required.</p>
+      <h4>4. Your Statutory Rights</h4>
+      <p>Under UK GDPR, you have the right to request access to, rectification of, or erasure of your personal data, and the right to restrict or object to processing. To exercise these rights, email <a href="mailto:pm@allseasonslettings.co.uk" style="color:var(--brass)">pm@allseasonslettings.co.uk</a>.</p>
+    `
+  },
+  cookies: {
+    badge: 'Cookie Policy',
+    title: 'Cookie Policy & Web Technologies',
+    updated: 'October 2026',
+    html: `
+      <p>This Cookie Policy explains how All Seasons Lettings uses cookies and similar technologies on allseasonslettings.co.uk.</p>
+      <h4>1. What Are Cookies?</h4>
+      <p>Cookies are small text files placed on your computer or device when you browse our website. They help us provide a secure, smooth browsing experience and understand how visitors interact with our services.</p>
+      <h4>2. Categories of Cookies We Use</h4>
+      <ul>
+        <li><strong>Strictly Necessary Cookies:</strong> Essential for website navigation, security headers, and CSRF token transmission. The website cannot function correctly without these.</li>
+        <li><strong>Functional &amp; Preference Cookies:</strong> Remember your calculator choices, open modal state, and theme settings between sessions.</li>
+        <li><strong>Performance &amp; Analytical Cookies:</strong> Measure anonymized aggregated page views and traffic flows to improve website responsiveness.</li>
+      </ul>
+      <h4>3. Managing Your Cookie Preferences</h4>
+      <p>You can adjust your browser settings at any time to block or delete cookies. Note that disabling essential cookies may impact certain interactive tools like our rent calculators.</p>
+    `
+  },
+  terms: {
+    badge: 'Terms & Conditions',
+    title: 'Terms of Website Use',
+    updated: 'October 2026',
+    html: `
+      <p>By accessing or using allseasonslettings.co.uk, you agree to comply with and be bound by the following terms of use.</p>
+      <h4>1. Accuracy &amp; Indicative Calculators</h4>
+      <p>All calculations, rent estimators, yield outputs, and guide figures provided on this site are indicative and intended for general informational purposes only. They do not constitute a formal commercial rent offer, binding valuation, or financial advice. Formal guaranteed rent offers are confirmed only in writing following an in-person physical property inspection by our team.</p>
+      <h4>2. Intellectual Property</h4>
+      <p>All text, photographic imagery, design tokens, logos, and custom calculator scripts are the intellectual property of All Seasons Lettings &amp; Management Ltd or licensed for our use. Unauthorised duplication, scraping, or republishing is prohibited.</p>
+      <h4>3. Limitation of Liability</h4>
+      <p>While we take reasonable steps to ensure content is up to date, we make no representations or warranties regarding complete completeness or absolute accuracy of regulatory commentaries.</p>
+      <h4>4. Governing Law</h4>
+      <p>These terms are governed by and construed in accordance with the laws of England and Wales. The courts of England and Wales have exclusive jurisdiction.</p>
+    `
+  },
+  complaints: {
+    badge: 'Complaints Procedure',
+    title: 'Complaints Handling Procedure (PRS Approved)',
+    updated: 'October 2026',
+    html: `
+      <p>All Seasons Lettings &amp; Management is committed to providing the highest standard of service. As an accredited member of the <strong>Property Redress Scheme (PRS)</strong>, we operate a transparent, formal complaints handling procedure.</p>
+      <h4>Stage 1: Formal Notification</h4>
+      <p>If you are dissatisfied with any aspect of our service, please send your complaint in writing to our Property Management team at <a href="mailto:pm@allseasonslettings.co.uk" style="color:var(--brass)">pm@allseasonslettings.co.uk</a> or by post to 538 High Street North, Manor Park, London E12 6QN.</p>
+      <p>We will acknowledge receipt within <strong>3 working days</strong> and provide a full written response within <strong>15 working days</strong>.</p>
+      <h4>Stage 2: Director Review</h4>
+      <p>If you remain dissatisfied with the initial response, you may request an internal escalation to a Director. The Director will review your case file and issue a final written viewpoint letter within 15 working days.</p>
+      <h4>Stage 3: Independent External Redress</h4>
+      <p>If your complaint has not been resolved within 8 weeks of your initial notification, or you have received our final viewpoint letter, you have the right to refer the matter free of charge to the Property Redress Scheme:</p>
+      <div class="highlight-box">
+        <strong>The Property Redress Scheme (PRS)</strong><br>
+        Membership Number: PRS002684<br>
+        Website: <a href="https://www.theprs.co.uk" target="_blank" rel="noopener" style="color:var(--brass)">www.theprs.co.uk</a><br>
+        Telephone: 0333 321 9418
+      </div>
+    `
+  },
+  accessibility: {
+    badge: 'Accessibility Statement',
+    title: 'Accessibility Statement',
+    updated: 'October 2026',
+    html: `
+      <p>All Seasons Lettings is dedicated to ensuring digital accessibility for people of all abilities. We strive to continually improve the user experience and apply relevant accessibility standards in accordance with the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.</p>
+      <h4>Measures taken to support accessibility:</h4>
+      <ul>
+        <li>Semantic HTML structure with proper landmark regions, headings hierarchy, and ARIA attributes.</li>
+        <li>Full keyboard operability for interactive mega menus, sliders, modals, calculators, and accordion elements.</li>
+        <li>Clear focus indicators across all actionable form controls and hyperlinks.</li>
+        <li>Contrast ratios meeting or exceeding standard legibility thresholds across dark and light modes.</li>
+        <li>Responsive sizing supporting 200% browser zoom without degradation of content.</li>
+      </ul>
+      <p>If you experience any difficulty accessing content or have feedback, please contact us at <a href="mailto:pm@allseasonslettings.co.uk" style="color:var(--brass)">pm@allseasonslettings.co.uk</a> or call 020 8478 9992.</p>
+    `
+  }
+};
+
+function openLegalModal(id) {
+  const policy = legalData[id];
+  if (!policy) return;
+  document.getElementById('legal-modal-badge').textContent = policy.badge;
+  document.getElementById('legal-modal-title').textContent = policy.title;
+  document.getElementById('legal-modal-updated').textContent = 'Last updated: ' + policy.updated;
+  document.getElementById('legal-modal-content').innerHTML = policy.html;
+  const modal = document.getElementById('modal-legal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeLegalModal() {
+  const modal = document.getElementById('modal-legal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
 
 /* ── Dropdown & Mega Menu Logic ─────────────────────────── */
 function toggleDropdown(btn) {
@@ -4980,6 +5402,11 @@ function offerNext() {
     const email = document.getElementById('offer-email')?.value.trim() || '';
     const estRent = document.getElementById('calc-output')?.textContent || '';
 
+    const nb = document.getElementById('offer-next-btn');
+    const bb = document.getElementById('offer-back-btn');
+    if (nb) { nb.disabled = true; nb.textContent = 'Submitting...'; }
+    if (bb) { bb.disabled = true; }
+
     sendLeadWebhook({
       form_name: 'Guaranteed Rent Offer',
       form_id: 'rent_offer',
@@ -4991,11 +5418,14 @@ function offerNext() {
       property_type: ptype,
       estimated_rent: estRent,
       consent: true
-    }, hp);
-
-    document.getElementById('offer-form-body').style.display = 'none';
-    document.getElementById('offer-sent').style.display = 'block';
-    document.getElementById('offer-actions').style.display = 'none';
+    }, hp).then(() => {
+      document.getElementById('offer-form-body').style.display = 'none';
+      document.getElementById('offer-sent').style.display = 'block';
+      document.getElementById('offer-actions').style.display = 'none';
+    }).finally(() => {
+      if (nb) { nb.disabled = false; nb.textContent = 'Request my rent offer'; }
+      if (bb) { bb.disabled = false; }
+    });
     return;
   }
   offerStep++;
@@ -5063,6 +5493,13 @@ function submitContact() {
     return;
   }
 
+  const submitBtn = document.querySelector('#contact-form-body button, #contact-form-body .btn-accent');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.dataset.origText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending message...';
+  }
+
   sendLeadWebhook({
     form_name: 'Contact Enquiry',
     form_id: 'contact',
@@ -5071,10 +5508,15 @@ function submitContact() {
     phone,
     topic,
     message: msg
-  }, hp);
-
-  document.getElementById('contact-form-body').style.display = 'none';
-  document.getElementById('contact-sent').style.display = 'block';
+  }, hp).then(() => {
+    document.getElementById('contact-form-body').style.display = 'none';
+    document.getElementById('contact-sent').style.display = 'block';
+  }).finally(() => {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitBtn.dataset.origText || 'Send message';
+    }
+  });
 }
 
 function resetContact() {
@@ -6198,26 +6640,47 @@ function submitPortfolioConsult(e) {
     current_management: current
   };
 
-  sendLeadWebhook(payload, hp);
-
-  document.getElementById('form-portfolio-consult').style.display = 'none';
-  const successBox = document.getElementById('pf-success');
-  if (successBox) {
-    successBox.style.display = 'block';
-    const confName = document.getElementById('pf-conf-name');
-    if (confName) confName.textContent = name;
+  const submitBtn = document.querySelector('#form-portfolio-consult button[type="submit"], #form-portfolio-consult .btn-accent');
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.dataset.origText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
   }
+
+  sendLeadWebhook(payload, hp).then(() => {
+    document.getElementById('form-portfolio-consult').style.display = 'none';
+    const successBox = document.getElementById('pf-success');
+    if (successBox) {
+      successBox.style.display = 'block';
+      const confName = document.getElementById('pf-conf-name');
+      if (confName) confName.textContent = name;
+    }
+  }).finally(() => {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitBtn.dataset.origText || 'Request consultation';
+    }
+  });
 }
 
 /* ── DOM Init ────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  initSlider('home');
   initHomeFaq();
   setFaqTab('Landlords');
   updateCalc();
   runAffordCalc();
   updateOfferStepUI();
   observeAnims();
+
+  // Read current URL path or hash to activate correct page
+  const initial = getPageFromUrl();
+  if (initial.page !== 'home' || initial.anchor) {
+    goTo(initial.page, initial.anchor, null, false);
+  } else {
+    initSlider('home');
+    const meta = routeMap.home;
+    history.replaceState({ page: 'home' }, meta.title, window.location.pathname);
+  }
 });
 </script>
 </body>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://allseasonslettings.co.uk/sitemap.xml
+Sitemap: https://allseasonslettings.co.uk/wp-sitemap.xml
