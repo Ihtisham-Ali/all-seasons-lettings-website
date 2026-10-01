@@ -955,6 +955,27 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
 .footer-bottom{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding-top:24px}
 .footer-copy{font-size:12px;color:rgba(255,255,255,.35)}
 
+
+/* ── Guide Full Article View Styling ─────────────────────── */
+.article-sheet{background:#fff;border-radius:var(--radius-lg);padding:clamp(26px,4.5vw,52px);box-shadow:0 10px 30px rgba(0,0,0,.06);border:1px solid var(--border-light)}
+.article-body-prose{color:#334155;font-size:16px;line-height:1.8}
+.article-body-prose h2{color:var(--navy);font-size:clamp(20px,2.2vw,26px);font-weight:800;margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border-light);font-family:var(--ff-head)}
+.article-body-prose h3{color:var(--navy);font-size:18px;font-weight:700;margin:22px 0 8px;font-family:var(--ff-head)}
+.article-body-prose p{margin-bottom:16px}
+.article-body-prose ul{margin:0 0 18px 22px;list-style:disc}
+.article-body-prose li{margin-bottom:8px;line-height:1.7}
+.article-body-prose strong{color:var(--navy);font-weight:700}
+.article-body-prose .highlight-box{background:#f0fdf4;border-left:4px solid var(--emerald);padding:18px 22px;border-radius:0 8px 8px 0;margin:22px 0;color:#166534}
+.article-body-prose .warning-box{background:#fffbeb;border-left:4px solid #f59e0b;padding:18px 22px;border-radius:0 8px 8px 0;margin:22px 0;color:#92400e}
+.article-body-prose .info-box{background:#eef2ff;border-left:4px solid var(--indigo-light);padding:18px 22px;border-radius:0 8px 8px 0;margin:22px 0;color:#3730a3}
+.article-body-prose table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14.5px}
+.article-body-prose th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-weight:700}
+.article-body-prose td{padding:12px 14px;border-bottom:1px solid var(--border-light)}
+.article-body-prose tr:nth-child(even){background:#f8fafc}
+.guide-card{transition:transform .2s ease,box-shadow .2s ease;cursor:pointer}
+.guide-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.guide-card:hover .card-cta{color:var(--indigo-light)}
+
 /* ── Responsive Architecture ─────────────────────────────── */
 @media (max-width:1120px){
   #hamburger{display:flex}
@@ -3229,19 +3250,153 @@ footer{background:var(--navy);padding:clamp(48px,7vw,80px) 0 28px;border-top:1px
     </div>
   </section>
 
-  <!-- Complete 6 Article Guides Grid -->
-  <section class="section">
-    <div class="container">
-      <div class="card-grid">
-        <div class="card" data-anim style="cursor:pointer" onclick="openGuideModal('guaranteed-rent')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('guaranteed-rent')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">6 min read</span></div><h3 style="margin-top:12px">What is guaranteed rent — and is it right for you?</h3><p>The honest version: what you get, what you give up, and who it works best for.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="1" style="cursor:pointer" onclick="openGuideModal('9-certificates')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('9-certificates')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Checklist</span><span class="caption">4 min read</span></div><h3 style="margin-top:12px">The 9 certificates a London landlord must have</h3><p>Gas, electrical, EPC, fire, CO — the complete list with current renewal intervals.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="2" style="cursor:pointer" onclick="openGuideModal('s21-s8')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('s21-s8')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Explainer</span><span class="caption">5 min read</span></div><h3 style="margin-top:12px">Renters' Rights Act 2025 &amp; Section 8 Notices</h3><p>The Renters' Rights Act 2025 in plain English: Section 21 abolition, revised Section 8 grounds, and what London landlords must do.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim style="cursor:pointer" onclick="openGuideModal('hmo-licensing')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('hmo-licensing')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">7 min read</span></div><h3 style="margin-top:12px">HMO licensing: do you need a licence and how do you get one?</h3><p>The threshold most landlords miss, the cost, and what happens if you let without a licence.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="1" style="cursor:pointer" onclick="openGuideModal('rent-vs-agent')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('rent-vs-agent')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Explainer</span><span class="caption">4 min read</span></div><h3 style="margin-top:12px">Guaranteed rent vs. letting agent: a proper comparison</h3><p>The full cost breakdown across five years, including voids, repairs and agent fees.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
-        <div class="card" data-anim data-anim-delay="2" style="cursor:pointer" onclick="openGuideModal('damp-mould')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideModal('damp-mould')"><div style="display:flex;gap:10px;align-items:center"><span class="badge badge-indigo">Guide</span><span class="caption">5 min read</span></div><h3 style="margin-top:12px">Damp and mould: what a landlord is legally required to do</h3><p>The Awaab's Law changes, the 14-day rule, and what a proper investigation looks like.</p><div class="card-cta">Read the guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+  <!-- Guides Dual View: Grid & Dedicated Full Article View -->
+  <div id="resources-grid-view">
+    <section class="section">
+      <div class="container">
+        <div class="section-head" style="text-align:center;max-width:700px;margin:0 auto 40px" data-anim>
+          <div class="eyebrow" style="justify-content:center">Landlord Knowledge Hub</div>
+          <h2 style="font-size:clamp(24px,3.2vw,36px);color:var(--navy);font-weight:800;margin-top:10px">Practical London Landlord Guides</h2>
+          <p class="body-lg" style="color:var(--n600);margin-top:10px">Click on any guide below to read the comprehensive in-depth article, legal requirements, and actionable advice.</p>
+        </div>
+        <div class="card-grid">
+          <!-- Card 1 -->
+          <div class="card guide-card" data-guide="guaranteed-rent" data-anim onclick="openGuideArticle('guaranteed-rent')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideArticle('guaranteed-rent')">
+            <div style="display:flex;gap:10px;align-items:center">
+              <span class="badge badge-indigo">Guide</span>
+              <span class="caption">6 min read</span>
+            </div>
+            <h3 style="margin-top:14px">What is guaranteed rent — and is it right for you?</h3>
+            <p>The honest version: what you get, what you give up, and who it works best for.</p>
+            <div class="card-cta" style="margin-top:auto;padding-top:16px;color:var(--indigo);font-weight:700;display:inline-flex;align-items:center;gap:6px">
+              Read the full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card guide-card" data-guide="9-certificates" data-anim data-anim-delay="1" onclick="openGuideArticle('9-certificates')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideArticle('9-certificates')">
+            <div style="display:flex;gap:10px;align-items:center">
+              <span class="badge badge-indigo">Checklist</span>
+              <span class="caption">5 min read</span>
+            </div>
+            <h3 style="margin-top:14px">The 9 certificates a London landlord must have</h3>
+            <p>Gas, electrical, EPC, fire, CO — the complete list with current renewal intervals.</p>
+            <div class="card-cta" style="margin-top:auto;padding-top:16px;color:var(--indigo);font-weight:700;display:inline-flex;align-items:center;gap:6px">
+              Read the full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card guide-card" data-guide="s21-s8" data-anim data-anim-delay="2" onclick="openGuideArticle('s21-s8')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideArticle('s21-s8')">
+            <div style="display:flex;gap:10px;align-items:center">
+              <span class="badge badge-indigo">Explainer</span>
+              <span class="caption">5 min read</span>
+            </div>
+            <h3 style="margin-top:14px">Renters' Rights Act 2025 &amp; Section 8 Notices</h3>
+            <p>The Renters' Rights Act 2025 in plain English: Section 21 abolition, revised Section 8 grounds, and what London landlords must do.</p>
+            <div class="card-cta" style="margin-top:auto;padding-top:16px;color:var(--indigo);font-weight:700;display:inline-flex;align-items:center;gap:6px">
+              Read the full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card guide-card" data-guide="hmo-licensing" data-anim onclick="openGuideArticle('hmo-licensing')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideArticle('hmo-licensing')">
+            <div style="display:flex;gap:10px;align-items:center">
+              <span class="badge badge-indigo">Guide</span>
+              <span class="caption">7 min read</span>
+            </div>
+            <h3 style="margin-top:14px">HMO licensing: do you need a licence and how do you get one?</h3>
+            <p>The threshold most landlords miss, the cost, and what happens if you let without a licence.</p>
+            <div class="card-cta" style="margin-top:auto;padding-top:16px;color:var(--indigo);font-weight:700;display:inline-flex;align-items:center;gap:6px">
+              Read the full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card guide-card" data-guide="rent-vs-agent" data-anim data-anim-delay="1" onclick="openGuideArticle('rent-vs-agent')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideArticle('rent-vs-agent')">
+            <div style="display:flex;gap:10px;align-items:center">
+              <span class="badge badge-indigo">Explainer</span>
+              <span class="caption">5 min read</span>
+            </div>
+            <h3 style="margin-top:14px">Guaranteed rent vs. letting agent: a proper comparison</h3>
+            <p>The full cost breakdown across five years, including voids, repairs and agent fees.</p>
+            <div class="card-cta" style="margin-top:auto;padding-top:16px;color:var(--indigo);font-weight:700;display:inline-flex;align-items:center;gap:6px">
+              Read the full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card guide-card" data-guide="damp-mould" data-anim data-anim-delay="2" onclick="openGuideArticle('damp-mould')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openGuideArticle('damp-mould')">
+            <div style="display:flex;gap:10px;align-items:center">
+              <span class="badge badge-indigo">Guide</span>
+              <span class="caption">6 min read</span>
+            </div>
+            <h3 style="margin-top:14px">Damp and mould: what a landlord is legally required to do</h3>
+            <p>The Awaab's Law changes, the 14-day rule, and what a proper investigation looks like.</p>
+            <div class="card-cta" style="margin-top:auto;padding-top:16px;color:var(--indigo);font-weight:700;display:inline-flex;align-items:center;gap:6px">
+              Read the full guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+  </div>
+
+  <!-- Dedicated Full Article Reading View -->
+  <div id="resources-article-view" style="display:none;background:var(--n100);padding:clamp(32px,5vw,60px) 0;border-top:1px solid var(--border-light)">
+    <div class="container" style="max-width:960px">
+      <!-- Breadcrumb & Back Action -->
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:24px">
+        <button type="button" class="btn btn-outline btn-sm" onclick="closeGuideArticle()" style="display:inline-flex;align-items:center;gap:8px;font-weight:600">
+          ← Back to all guides
+        </button>
+        <div style="font-size:12.5px;color:var(--n500)">
+          Landlord Resources &rsaquo; <span id="article-view-breadcrumb" style="color:var(--navy);font-weight:600">Guide Detail</span>
+        </div>
+      </div>
+
+      <!-- Main Article Sheet -->
+      <article class="article-sheet">
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px">
+          <span class="badge badge-indigo" id="article-view-badge">Guide</span>
+          <span class="caption" style="color:var(--n600)" id="article-view-readtime">6 min read</span>
+          <span class="caption" style="color:var(--n300)">•</span>
+          <span class="caption" style="color:var(--emerald);font-weight:600">✓ Updated for 2026 Regulations</span>
+        </div>
+
+        <h1 id="article-view-title" style="font-size:clamp(26px,3.4vw,38px);color:var(--navy);font-weight:800;line-height:1.25;margin-bottom:22px;font-family:var(--ff-head)"></h1>
+
+        <!-- Author / Editorial Byline -->
+        <div style="display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);margin-bottom:32px">
+          <div style="width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;letter-spacing:.04em;flex-shrink:0">AS</div>
+          <div>
+            <div style="font-size:13.5px;font-weight:700;color:var(--navy)">All Seasons Lettings Editorial &amp; Compliance Team</div>
+            <div style="font-size:12px;color:var(--n500)">538 High Street North, Manor Park, London E12 6QN · Serving London Landlords Since 1994</div>
+          </div>
+        </div>
+
+        <!-- Article Rich Prose Body -->
+        <div class="article-body-prose" id="article-view-content"></div>
+
+        <!-- Article Bottom CTA & Consultation Box -->
+        <div style="margin-top:44px;padding:clamp(22px,3.5vw,32px);background:var(--navy-900);border-radius:var(--radius-lg);color:#fff;border-left:4px solid var(--brass)">
+          <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+            <div style="max-width:38rem">
+              <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);margin-bottom:6px">Direct Landlord Advisory</div>
+              <h3 style="font-size:clamp(19px,2.2vw,24px);color:#fff;font-weight:700">Have questions about your rental property?</h3>
+              <p style="font-size:14px;color:rgba(255,255,255,.75);margin-top:6px;line-height:1.6">
+                Our property management team on High Street North can review your licensing status, compliance obligations, or discuss a fixed guaranteed rent agreement with zero commission.
+              </p>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <a href="tel:02084789992" class="btn btn-accent btn-md">Call 020 8478 9992</a>
+              <button type="button" class="btn btn-inverse btn-md" onclick="closeGuideArticle()">← Back to Guides</button>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-  </section>
+  </div>
 
   <!-- Bottom CTA -->
   <div class="section" style="background:var(--navy-800);padding:clamp(48px,7vw,80px) 0">
@@ -4797,18 +4952,25 @@ window.addEventListener('popstate', (e) => {
 function getPageFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const pParam = params.get('p');
+  const guideParam = params.get('guide');
   let currentPath = pParam ? pParam : window.location.pathname.replace(basePath, '');
   currentPath = currentPath || '/';
   const path = currentPath.replace(/\/+$/, '') || '/';
   const hash = window.location.hash.replace(/^#/, '');
   for (const [key, val] of Object.entries(routeMap)) {
-    if (val.path === path) return { page: key, anchor: hash };
+    if (val.path === path) return { page: key, anchor: hash, guide: guideParam };
   }
-  if (pages.includes(hash)) return { page: hash, anchor: null };
-  return { page: 'home', anchor: hash };
+  if (pages.includes(hash)) return { page: hash, anchor: null, guide: guideParam };
+  return { page: 'home', anchor: hash, guide: guideParam };
 }
 
 document.addEventListener('click', e => {
+  const guideCard = e.target.closest('[data-guide]');
+  if (guideCard && !e.target.closest('button, a[href^="tel:"]')) {
+    e.preventDefault();
+    openGuideArticle(guideCard.dataset.guide);
+    return;
+  }
   const a = e.target.closest('[data-page]');
   if (a) {
     e.preventDefault();
@@ -4823,20 +4985,66 @@ const guidesData = {
     time: '6 min read',
     title: 'What is guaranteed rent — and is it right for you?',
     html: `
-      <p>Guaranteed rent is a contractual agreement between a property owner and a corporate tenant — in this case, All Seasons Lettings &amp; Management. Under this model, we become your legal tenant under a commercial corporate lease, usually for a term of 2 to 10 years.</p>
-      <h4>How the arrangement works</h4>
-      <p>Unlike standard agency letting where the agent acts merely as an intermediary and passes all vacancy and non-payment risk to you, All Seasons pays your rent directly on the first of each month, regardless of whether the property is occupied, between tenancies, or experiencing delays.</p>
+      <p class="body-lg" style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px">
+        Guaranteed rent is a contractual partnership between a property owner and a professional corporate tenant — in this case, All Seasons Lettings &amp; Management. Under this model, we become your legal tenant under a commercial corporate lease, typically for a fixed period of 2 to 10 years.
+      </p>
+
+      <h2>1. The Legal Structure: Commercial Corporate Lease vs. High Street AST</h2>
+      <p>In a standard letting agency setup, the agent acts merely as an introducer or property manager. The tenancy agreement (Assured Shorthold Tenancy) is strictly between you and an individual tenant. If that tenant defaults, damages the property, or ceases paying rent, the legal and financial exposure rests 100% on your shoulders.</p>
+      <p>Under the All Seasons Guaranteed Rent scheme, the legal relationship is inverted. We enter into a direct commercial lease with you. We take on full occupancy responsibility, contractually guaranteeing your monthly income regardless of occupancy status or tenant arrears.</p>
+
       <div class="highlight-box">
-        <strong>The core principle:</strong> You receive an agreed fixed sum every month with 0% agency deductions. All Seasons Lettings assumes full responsibility for tenant sourcing, council placement, referencing, routine day-to-day repairs, and statutory compliance.
+        <strong>The Fundamental Rule:</strong> You receive an agreed fixed net sum on the first of every calendar month with 0% agency deductions. All Seasons Lettings assumes all vacancy risk, referencing burdens, day-to-day repairs, and statutory compliance management.
       </div>
-      <h4>Who is it best for?</h4>
+
+      <h2>2. What We Cover vs. Owner Responsibilities</h2>
+      <p>Transparency is essential to a successful long-term agreement. Here is the exact boundary of obligations:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Included &amp; Managed by All Seasons</th>
+            <th>Retained by Property Owner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fixed Monthly Rent</strong> — Paid on the 1st, every month without fail</td>
+            <td><strong>Mortgage Payments</strong> — Your underlying mortgage commitments</td>
+          </tr>
+          <tr>
+            <td><strong>0% Agency Commission</strong> — Zero monthly deductions</td>
+            <td><strong>Buildings Insurance</strong> — Structural landlord building policy</td>
+          </tr>
+          <tr>
+            <td><strong>Zero Void Periods</strong> — 100% covered between tenancies</td>
+            <td><strong>Ground Rent &amp; Service Charges</strong> — If property is leasehold</td>
+          </tr>
+          <tr>
+            <td><strong>Day-to-Day Repairs</strong> — Dripping taps, minor plumbing, routine maintenance</td>
+            <td><strong>Major Capital Replacements</strong> — Structural roof/boiler replacement over agreed threshold</td>
+          </tr>
+          <tr>
+            <td><strong>Tenant Vetting &amp; Placement</strong> — Sourced through local council partnerships</td>
+            <td><strong>Initial Key Access</strong> — Handover of keys and initial access</td>
+          </tr>
+          <tr>
+            <td><strong>Statutory Safety Compliance</strong> — Scheduling Gas Safe, EICR &amp; EPC</td>
+            <td><strong>Proof of Ownership</strong> — Title deed and photo identification</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Who Does Guaranteed Rent Work Best For?</h2>
       <ul>
-        <li><strong>Hands-off Landlords:</strong> Owners who want completely passive monthly returns without phone calls about leaking taps or appliance repairs.</li>
-        <li><strong>Buy-to-Let Investors with Mortgages:</strong> Landlords with strict monthly mortgage commitments who cannot risk void periods or protracted tenant arrears.</li>
-        <li><strong>Expatriate &amp; Out-of-Area Landlords:</strong> Owners living outside London or abroad who require a dedicated, licensed local team on the ground.</li>
+        <li><strong>Investors with Buy-to-Let Mortgages:</strong> Landlords with strict monthly mortgage payments who cannot afford a single void month or legal arrears proceedings.</li>
+        <li><strong>Hands-off &amp; Busy Professionals:</strong> Owners who view property as an investment rather than a full-time second job and want zero phone calls about boiler pressure or appliance breakdowns.</li>
+        <li><strong>Expatriate &amp; Out-of-Area Landlords:</strong> Property owners living overseas or outside London who require a vetted, licensed agency on the ground on High Street North.</li>
+        <li><strong>Portfolio Owners:</strong> Landlords seeking streamlined block management and predictable cash flow across multiple units.</li>
       </ul>
-      <h4>Owner Responsibilities</h4>
-      <p>Under our contract, your retained obligations remain your mortgage payments, buildings insurance policy, and ground rent/service charges (if leasehold). All day-to-day tenancy matters and routine maintenance are taken care of by our in-house team.</p>
+
+      <div class="info-box">
+        <strong>How to Start:</strong> We inspect your property, agree on an indicative rent figure based on current London borough metrics, review compliance, and issue the commercial agreement. Most tenancies start within 7 to 14 days of inspection.
+      </div>
     `
   },
   '9-certificates': {
@@ -4844,27 +5052,41 @@ const guidesData = {
     time: '5 min read',
     title: 'The 9 certificates a London landlord must have',
     html: `
-      <p>Renting residential property in England is governed by strict statutory safety standards. Failing to have valid certificates can invalidate possession notices, void insurance policies, and lead to substantial civil penalties.</p>
-      <h4>1. Energy Performance Certificate (EPC)</h4>
-      <p>Required by Minimum Energy Efficiency Standards (MEES). Properties must achieve an EPC rating of E or higher before a new tenancy commences. Valid for 10 years.</p>
-      <h4>2. Landlord Gas Safety Record (CP12)</h4>
-      <p>Mandatory for all properties with a mains gas supply or gas appliances. Must be conducted annually by a registered Gas Safe engineer. Copies must be provided to tenants within 28 days.</p>
-      <h4>3. Electrical Installation Condition Report (EICR)</h4>
-      <p>Mandatory under the Electrical Safety Standards in the Private Rented Sector (England) Regulations 2020. Fixed wiring must be inspected at least every 5 years by a qualified electrician.</p>
-      <h4>4. Smoke and Carbon Monoxide Alarm Compliance</h4>
-      <p>A working smoke alarm must be fitted on every storey of the accommodation. A carbon monoxide alarm is required in any room containing a fixed combustion appliance (including gas boilers and fires).</p>
-      <h4>5. Legionella Risk Assessment</h4>
-      <p>Landlords have a legal duty under health and safety legislation to assess and control the risk of exposure to Legionella bacteria in domestic water systems.</p>
-      <h4>6. Furniture and Furnishings Fire Safety (1988)</h4>
-      <p>All soft furnishings, sofas, and mattresses supplied must carry manufacturer fire safety labels confirming flame-retardant compliance.</p>
-      <h4>7. Statutory 'How to Rent' Guide</h4>
-      <p>The latest version of the government's checklist must be served to tenants prior to move-in.</p>
-      <h4>8. Selective or Additional Property Licence</h4>
-      <p>Many London boroughs (including Newham, Waltham Forest, Redbridge, Tower Hamlets) enforce selective licensing schemes across designated wards.</p>
-      <h4>9. Deposit Protection Prescribed Information</h4>
-      <p>Where a tenancy deposit is taken, it must be protected in a government-authorised scheme (DPS, TDS, or MyDeposits) within 30 days and prescribed information served.</p>
+      <p class="body-lg" style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px">
+        Operating a residential letting property in Greater London requires strict compliance with over 170 statutory regulations. Failing to hold valid certificates can invalidate possession proceedings, nullify buildings insurance, and trigger substantial civil penalties of up to £30,000 from local housing authorities.
+      </p>
+
+      <h2>The Definitive 9-Certificate Checklist</h2>
+
+      <h3>1. Energy Performance Certificate (EPC)</h3>
+      <p>Under the Minimum Energy Efficiency Standards (MEES), private rental properties in England must achieve an EPC rating of <strong>E or higher</strong> before entering into a tenancy. Certificates are valid for 10 years and must be given to tenants before move-in.</p>
+
+      <h3>2. Landlord Gas Safety Record (CP12)</h3>
+      <p>Mandatory for any rental property with a mains gas supply, boiler, gas hob, or gas fire. Must be renewed <strong>every 12 months</strong> by a Gas Safe registered engineer. A copy must be provided to existing tenants within 28 days of the check and to new tenants prior to occupation.</p>
+
+      <h3>3. Electrical Installation Condition Report (EICR)</h3>
+      <p>Mandatory under the Electrical Safety Standards in the Private Rented Sector (England) Regulations 2020. All fixed wiring, sockets, and consumer units must be inspected by a qualified electrician at least <strong>every 5 years</strong>, with an acceptable 'Satisfactory' result.</p>
+
+      <h3>4. Smoke and Carbon Monoxide Alarm Compliance</h3>
+      <p>Under the Smoke and Carbon Monoxide Alarm (Amendment) Regulations 2022, landlords must ensure a working smoke alarm is fitted on <strong>every habitable storey</strong> of the property. A carbon monoxide alarm is required in any room containing a fixed combustion appliance (such as a gas boiler, gas fire, or wood burner). Alarms must be tested on the first day of each new tenancy.</p>
+
+      <h3>5. Legionella Risk Assessment</h3>
+      <p>Landlords have a legal health and safety duty under Section 3(2) of the Health and Safety at Work etc. Act 1974 to assess and control the risk of exposure to Legionella bacteria in domestic hot and cold water systems. A written assessment must be retained on file.</p>
+
+      <h3>6. Furniture and Furnishings Fire Safety (1988)</h3>
+      <p>All upholstered furniture, sofas, mattresses, and cushions supplied by the landlord must comply with fire resistance standards and carry original permanent manufacturer fire safety labels confirming match-flame and cigarette resistance.</p>
+
+      <h3>7. Statutory 'How to Rent' Checklist</h3>
+      <p>Landlords must provide tenants with the government-issued <em>"How to Rent: The checklist for renting in England"</em> guide at the start of each tenancy. Failing to provide the version in force at the start of the tenancy invalidates statutory possession notices.</p>
+
+      <h3>8. Property Licensing (Mandatory, Additional, or Selective)</h3>
+      <p>Across East and Greater London boroughs (including Newham, Waltham Forest, Redbridge, Barking &amp; Dagenham, Tower Hamlets), extensive <strong>Selective and Additional licensing schemes</strong> apply. Letting without a valid licence is a strict liability criminal offence.</p>
+
+      <h3>9. Tenancy Deposit Protection Prescribed Information</h3>
+      <p>Where a deposit is taken, it must be protected in a government-authorised custodial or insured scheme (DPS, TDS, or MyDeposits) within <strong>30 days</strong> of receipt, and statutory Prescribed Information served on the tenant.</p>
+
       <div class="highlight-box">
-        <strong>How All Seasons Lettings helps:</strong> Under our Guaranteed Rent agreement, we manage, schedule, and renew all required statutory certificates with our vetted engineers.
+        <strong>The All Seasons Solution:</strong> Scheduling and tracking 9 different expiration dates across multiple engineers is time-consuming. Under our Guaranteed Rent agreement, we coordinate, book, and track all renewals with certified Gas Safe and NICEIC contractors.
       </div>
     `
   },
@@ -4873,21 +5095,58 @@ const guidesData = {
     time: '5 min read',
     title: "Renters' Rights Act 2025 & Section 8 Notices — What Changed",
     html: `
-      <p>The landmark <strong>Renters' Rights Act 2025</strong> fundamentally reshaped the legal framework governing residential tenancies across England, replacing previous Section 21 provisions with reformed Section 8 grounds.</p>
-      <h4>1. Abolition of Section 21 'No-Fault' Evictions</h4>
-      <p>Section 21 notices, which previously allowed landlords to terminate assured shorthold tenancies with two months' notice without proving fault, have been abolished. All tenancies transitioned to periodic tenancies.</p>
-      <h4>2. Reformed and Strengthened Section 8 Grounds</h4>
-      <p>Possession now requires statutory grounds under Section 8 of the Housing Act 1988 (as amended):</p>
-      <ul>
-        <li><strong>Mandatory Ground 1 (Landlord Occupation):</strong> Landlord or immediate family requiring the property as their principal home (subject to initial term safeguards).</li>
-        <li><strong>Mandatory Ground 1A (Sale of Property):</strong> Where the landlord genuinely intends to market the property for sale.</li>
-        <li><strong>Ground 8 (Rent Arrears):</strong> Mandatory possession where rent arrears exceed statutory thresholds, with expanded notice periods.</li>
-        <li><strong>Discretionary Grounds:</strong> Repeated late payment, antisocial behaviour, or serious breach of tenancy obligations.</li>
-      </ul>
-      <h4>3. Extended Notice Periods and Evidentiary Burdens</h4>
-      <p>Notice periods under Section 8 grounds have been extended, and county courts require meticulous documentary proof of compliance with licensing, deposit protection, and repair obligations before granting possession orders.</p>
+      <p class="body-lg" style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px">
+        The landmark <strong>Renters' Rights Act 2025</strong> represents the most comprehensive reform to the English private rented sector in nearly four decades. It formally abolishes Section 21 'no-fault' evictions and transitions all assured tenancies into open-ended periodic agreements.
+      </p>
+
+      <h2>1. Abolition of Section 21 'No-Fault' Possession</h2>
+      <p>Previously, Section 21 of the Housing Act 1988 allowed landlords to regain possession of an Assured Shorthold Tenancy (AST) at the end of a fixed term by serving two months' written notice, without providing grounds or proving fault. The 2025 legislation permanently removes Section 21 for both new and existing tenancies across England.</p>
+      <p>Fixed-term tenancies have been replaced by rolling periodic tenancies. Tenants may give two months' notice to leave at any time, whilst landlords can only regain possession by establishing specific statutory grounds under Section 8.</p>
+
+      <h2>2. Reformed and Strengthened Section 8 Grounds</h2>
+      <p>To balance the removal of Section 21, the government expanded and amended statutory grounds under Section 8 of the Housing Act 1988:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Ground</th>
+            <th>Type</th>
+            <th>Conditions &amp; Required Notice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ground 1</strong><br>(Owner Occupation)</td>
+            <td>Mandatory</td>
+            <td>Landlord or immediate family moving into the property as principal residence. Cannot be used in the first 12 months. Requires 4 months' notice.</td>
+          </tr>
+          <tr>
+            <td><strong>Ground 1A</strong><br>(Intention to Sell)</td>
+            <td>Mandatory</td>
+            <td>Landlord genuinely putting property on the open market. Cannot be used during the first 12 months. Requires 4 months' notice.</td>
+          </tr>
+          <tr>
+            <td><strong>Ground 8</strong><br>(Severe Rent Arrears)</td>
+            <td>Mandatory</td>
+            <td>Tenant owes at least 3 months of rent arrears (expanded from 2 months) both at notice service and court hearing. Requires 4 weeks' notice.</td>
+          </tr>
+          <tr>
+            <td><strong>Ground 10 &amp; 11</strong><br>(Arrears &amp; Persistent Delays)</td>
+            <td>Discretionary</td>
+            <td>Any rent arrears or chronic late payments. Court weighs reasonableness.</td>
+          </tr>
+          <tr>
+            <td><strong>Ground 14</strong><br>(Antisocial Behaviour)</td>
+            <td>Discretionary</td>
+            <td>Nuisance, distress, or criminal conduct. Notice can be immediate, with court assessing evidence.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Stricter Court Evidentiary Requirements</h2>
+      <p>Under the reformed regime, County Courts require exhaustive documentary proof before granting possession orders. If a landlord has failed to comply with property licensing schemes, smoke alarm records, deposit protection prescribed rules, or EPC standards, possession applications will face significant delays or outright dismissal.</p>
+
       <div class="highlight-box">
-        <strong>The Guaranteed Rent Advantage:</strong> For property owners under All Seasons Lettings' guaranteed rent scheme, you never have to navigate court applications, bailiffs, or legal notices. We hold the lease, pay your rent unconditionally, and our experienced in-house legal team manages all tenancy procedures directly.
+        <strong>The Guaranteed Rent Shield:</strong> With All Seasons Lettings, you never have to navigate court forms, hire eviction solicitors, or wait on court bailiff backlogs. We hold the lease, pay your agreed rent unconditionally every month, and our in-house compliance team handles all tenant procedures directly.
       </div>
     `
   },
@@ -4896,21 +5155,58 @@ const guidesData = {
     time: '7 min read',
     title: 'HMO licensing: do you need a licence and how do you get one?',
     html: `
-      <p>Houses in Multiple Occupation (HMOs) are subject to comprehensive regulatory scrutiny across London boroughs. Understanding licensing tiers is vital to avoid severe civil financial penalties or Rent Repayment Orders.</p>
-      <h4>The Three Licensing Schemes in London</h4>
+      <p class="body-lg" style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px">
+        Houses in Multiple Occupation (HMOs) are subject to stringent regulatory enforcement across Greater London. Many property owners inadvertently operate unlicensed HMOs without realising their local council has lowered licensing thresholds.
+      </p>
+
+      <h2>1. The Three Licensing Schemes in Greater London</h2>
+      <p>London boroughs operate up to three simultaneous licensing regimes:</p>
       <ul>
-        <li><strong>Mandatory HMO Licensing:</strong> Applies nationwide to properties occupied by 5 or more persons forming 2 or more separate households who share basic facilities (kitchen, bathroom, or toilet).</li>
-        <li><strong>Additional HMO Licensing:</strong> Local boroughs have discretionary power to lower the threshold. In many East and North London boroughs, any property let to 3 or 4 unrelated sharers requires an Additional HMO Licence.</li>
-        <li><strong>Selective Licensing:</strong> Imposed on all privately rented properties in specific geographical wards, regardless of whether single-family or sharers.</li>
+        <li><strong>Mandatory HMO Licensing (Nationwide):</strong> Applies across all of England to any property let to <strong>5 or more individuals</strong> forming <strong>2 or more separate households</strong> who share basic kitchen, bathroom, or toilet amenities.</li>
+        <li><strong>Additional HMO Licensing (Borough-Discretionary):</strong> Many London boroughs (including Newham, Waltham Forest, Redbridge, Tower Hamlets, and Haringey) enforce Additional Schemes. In these areas, the threshold drops to any property let to <strong>3 or 4 unrelated sharers</strong> forming 2 or more households.</li>
+        <li><strong>Selective Licensing (Area-Specific):</strong> Requires <em>all</em> private rented properties within designated council wards to hold a licence, regardless of whether occupied by a single family or sharers.</li>
       </ul>
-      <h4>Key HMO Physical Standards</h4>
-      <p>Licensed HMOs must meet prescribed standards:</p>
+
+      <h2>2. Mandatory Physical Space Standards</h2>
+      <p>National minimum bedroom floor space standards apply to all licensed HMOs under Schedule 4 of the Housing Act 2004:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Room Classification</th>
+            <th>Minimum Net Floor Area</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single room (occupant over 10 years old)</td>
+            <td><strong>6.51 m² (70 sq ft)</strong></td>
+          </tr>
+          <tr>
+            <td>Double room (2 occupants over 10 years old)</td>
+            <td><strong>10.22 m² (110 sq ft)</strong></td>
+          </tr>
+          <tr>
+            <td>Single room (child under 10 years old)</td>
+            <td><strong>4.64 m² (50 sq ft)</strong></td>
+          </tr>
+          <tr>
+            <td>Ceiling height requirement</td>
+            <td>Floor area with ceiling height under 1.5m cannot be counted</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. HMO Fire Safety Standards</h2>
+      <p>HMOs face strict fire safety guidelines due to multiple independent occupants:</p>
       <ul>
-        <li>Minimum bedroom floor areas (6.51m² for single occupancy; 10.22m² for double occupancy).</li>
-        <li>Interlinked Grade A/D mains fire detection systems and 30-minute fire doors (FD30s) fitted with intumescent strips and smoke seals.</li>
-        <li>Adequate sanitary and cooking facilities proportional to occupant count.</li>
+        <li><strong>Fire Doors (FD30s):</strong> Self-closing, 30-minute fire-resistant doors fitted with intumescent strips and cold smoke seals on all kitchen and bedroom escape routes.</li>
+        <li><strong>Interlinked Detection:</strong> Grade A or Grade D mains-wired fire alarm systems with battery backup in all circulation areas and high-risk rooms.</li>
+        <li><strong>Thumb-turn Locks:</strong> Keyless thumb-turn exit locks on all exit and bedroom doors to facilitate emergency evacuation without a key.</li>
       </ul>
-      <p>All Seasons Lettings advises landlords across East London on HMO suitability and compliance planning.</p>
+
+      <div class="warning-box">
+        <strong>Penalties for Unlicensed Letting:</strong> Operating an unlicensed HMO carries severe legal liabilities, including civil penalties of up to £30,000 per offence, Rent Repayment Orders (RROs) forcing landlords to refund up to 24 months of rent, and prosecution in Magistrates' Court.
+      </div>
     `
   },
   'rent-vs-agent': {
@@ -4918,62 +5214,192 @@ const guidesData = {
     time: '5 min read',
     title: 'Guaranteed rent vs. letting agent: a proper comparison',
     html: `
-      <p>When comparing letting agents, landlords often look only at the headline percentage fee. A realistic five-year comparison reveals that conventional agency letting involves numerous frictional costs that erode actual take-home return.</p>
-      <h4>The Hidden Costs of Conventional Agency Letting</h4>
+      <p class="body-lg" style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px">
+        When evaluating letting options, landlords often look solely at headline percentage fees. However, a five-year financial comparison demonstrates that traditional agency letting involves substantial frictional costs that significantly reduce take-home net profit.
+      </p>
+
+      <h2>1. The Hidden Frictional Costs of Traditional Letting</h2>
+      <p>A standard high-street agent advertising a "12% management fee" typically results in a much higher deduction when VAT and ancillary charges are factored in:</p>
       <ul>
-        <li><strong>Commission Deductions:</strong> Full management typically costs 12% to 15% + VAT (effectively 14.4%–18% of your gross rental income).</li>
-        <li><strong>Void Periods:</strong> The average London rental property experiences 3 to 5 weeks between tenancies every 18 months, during which no rent is paid and council tax falls on the owner.</li>
-        <li><strong>Re-letting &amp; Renewal Fees:</strong> Many agencies charge £300 to £600 each time a tenant renews or moves out.</li>
-        <li><strong>Maintenance Markups:</strong> Third-party contractor coordination fees and markups on routine repairs.</li>
+        <li><strong>VAT on Commission:</strong> 12% + 20% VAT = <strong>14.4% effective deduction</strong> from gross rent every single month.</li>
+        <li><strong>Void Periods:</strong> In Greater London, the average property experiences 3 to 4 weeks of vacancy between tenancies every 18 to 24 months. During voids, you receive zero income while continuing to pay council tax, standing utility charges, and mortgage interest.</li>
+        <li><strong>Re-letting &amp; Tenancy Setup Fees:</strong> Many agents charge £300 to £600 for marketing, referencing, and drawing up renewed tenancy agreements each time an occupant departs.</li>
+        <li><strong>Inventory &amp; Check-out Charges:</strong> Professional independent inventory check-in and check-out fees range from £150 to £250 per tenancy.</li>
       </ul>
-      <h4>The All Seasons Guaranteed Rent Model</h4>
-      <p>With All Seasons Lettings:</p>
-      <ul>
-        <li><strong>0% Commission:</strong> No monthly management percentage deducted from your agreed guaranteed rent figure.</li>
-        <li><strong>0 Days Void Loss:</strong> Rent is paid every calendar month for the entire 2 to 10 year term, even between occupants.</li>
-        <li><strong>Day-to-day repairs managed:</strong> Minor maintenance is handled under our agreement, protecting your net return.</li>
-      </ul>
+
+      <h2>2. Realistic 5-Year Financial Comparison</h2>
+      <p>Consider a typical 2-bedroom London rental property achieving a gross market rent of £1,800/month (£21,600/year):</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Cost Element (Over 5 Years)</th>
+            <th>Traditional High-Street Letting Agent</th>
+            <th>All Seasons Guaranteed Rent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gross Rental Income</strong></td>
+            <td>£108,000 (Market rate)</td>
+            <td>£96,000 (Agreed fixed contract rate)</td>
+          </tr>
+          <tr>
+            <td><strong>Management Fees (14.4% incl. VAT)</strong></td>
+            <td>-£15,552</td>
+            <td><strong>£0 (0% Commission throughout term)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Void Loss (Average 8 weeks across 5 yrs)</strong></td>
+            <td>-£3,600</td>
+            <td><strong>£0 (100% Guaranteed every single month)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Council Tax &amp; Standing Charges During Voids</strong></td>
+            <td>-£600</td>
+            <td><strong>£0 (Covered by ASLM)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Re-letting, Inventories &amp; Renewals (3 lets)</strong></td>
+            <td>-£1,350</td>
+            <td><strong>£0 (All tenancy administration included)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Routine Day-to-Day Maintenance</strong></td>
+            <td>-£2,500 (Deducted from owner)</td>
+            <td><strong>£0 (Routine repairs absorbed by ASLM)</strong></td>
+          </tr>
+          <tr style="background:#f1f5f9;font-weight:700">
+            <td><strong>Total Estimated Net Cash in Bank</strong></td>
+            <td><strong>£84,398</strong></td>
+            <td><strong>£96,000</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong>The Outcome:</strong> Despite a slightly lower headline gross figure, the Guaranteed Rent model delivers <strong>over £11,600 more net profit in your bank account</strong> across five years — with zero tenant phone calls, zero arrears stress, and zero void periods.
+      </div>
     `
   },
   'damp-mould': {
     badge: 'Guide',
-    time: '5 min read',
+    time: '6 min read',
     title: 'Damp and mould: what a landlord is legally required to do',
     html: `
-      <p>Under the Housing Health and Safety Rating System (HHSRS) and the legislative standards stemming from <strong>Awaab's Law</strong>, damp and mould are classified as severe health hazards that require prompt, documented landlord action.</p>
-      <h4>Statutory Duty &amp; Response Timelines</h4>
-      <p>Landlords are legally required to keep the structure and exterior in repair and ensure properties are fit for human habitation under the Homes (Fitness for Human Habitation) Act 2018.</p>
+      <p class="body-lg" style="font-size:17px;color:var(--navy);font-weight:600;line-height:1.7;margin-bottom:20px">
+        Under the Housing Health and Safety Rating System (HHSRS) and regulatory requirements stemming from <strong>Awaab's Law</strong>, damp and mould are classified as Category 1 physiological health hazards that require prompt, documented, and effective landlord remediation.
+      </p>
+
+      <h2>1. The Legal Framework: Fitness for Human Habitation</h2>
+      <p>Under the <em>Homes (Fitness for Human Habitation) Act 2018</em>, private landlords must ensure rental properties are fit for human habitation at the start of the tenancy and remain so throughout. Damp and mould are expressly actionable in County Court, where tenants can claim significant compensation and rent repayment.</p>
+
+      <h2>2. Statutory Response Timelines (Awaab's Law Extensions)</h2>
+      <p>Best-practice compliance standards set strict operational timelines when a tenant reports damp or mould:</p>
       <ul>
-        <li><strong>Investigation:</strong> When reported, investigations into moisture ingress or persistent mould must commence promptly (within statutory guidelines, typically within 14 days).</li>
-        <li><strong>Written Action Plan:</strong> Clear identification of whether the root cause is penetrating damp (roofs/gutters/brickwork), rising damp, plumbing defects, or severe condensation.</li>
-        <li><strong>Remediation:</strong> Timely repairs must follow, including treating affected surfaces with fungicidal wash, improving thermal efficiency, and ensuring mechanical extractors function correctly.</li>
+        <li><strong>Investigation (Within 14 Days):</strong> A qualified inspection must be carried out within 14 calendar days of a report to identify the root cause of moisture ingress.</li>
+        <li><strong>Written Summary (Within 48 Hours of Inspection):</strong> The landlord or managing agent must provide a written report detailing the findings, root cause, and proposed works schedule.</li>
+        <li><strong>Remediation (Within 7 Days):</strong> Once investigated, repair and remediation works must commence within 7 calendar days for significant hazards.</li>
       </ul>
-      <h4>Proactive Inspections</h4>
-      <p>All Seasons Lettings conducts scheduled property inspections and reports any early indicators of moisture or condensation, taking corrective action before issues escalate.</p>
+
+      <h2>3. Identifying the Root Cause</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Damp Type</th>
+            <th>Typical Symptoms</th>
+            <th>Required Remediation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Penetrating Damp</strong></td>
+            <td>Localised damp patches, staining on upper walls or ceilings, peeling wallpaper</td>
+            <td>Fix roof slates, clear leaking guttering, repoint external brickwork, seal window frames</td>
+          </tr>
+          <tr>
+            <td><strong>Rising Damp</strong></td>
+            <td>Tide marks up to 1m from ground level, decaying skirting boards, white efflorescence salts</td>
+            <td>Install or repair chemical damp-proof course (DPC), replace damaged plaster</td>
+          </tr>
+          <tr>
+            <td><strong>Plumbing Leaks</strong></td>
+            <td>Sudden water staining, dripping pipework, damp beneath baths, sinks, or radiators</td>
+            <td>Immediate plumbing repair, structural drying, and sanitisation</td>
+          </tr>
+          <tr>
+            <td><strong>Condensation</strong></td>
+            <td>Black spot mould (Aspergillus niger) around cold window reveals, external corners, and behind furniture</td>
+            <td>Upgrade mechanical extractor fans (humidistat-controlled), improve insulation, clean mould with fungicidal wash</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong>Proactive Inspection Protocol:</strong> All Seasons Lettings schedules regular property inspections across London. We test extractor flow rates, inspect external rainwater goods, and address moisture indicators before they become hazardous to health.
+      </div>
     `
   }
 };
 
-function openGuideModal(id) {
+function openGuideArticle(id) {
   const guide = guidesData[id];
   if (!guide) return;
-  document.getElementById('guide-modal-badge').textContent = guide.badge;
-  document.getElementById('guide-modal-readtime').textContent = guide.time;
-  document.getElementById('guide-modal-title').textContent = guide.title;
-  document.getElementById('guide-modal-content').innerHTML = guide.html;
-  const modal = document.getElementById('modal-guide');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+
+  // Populate Article View
+  const titleEl = document.getElementById('article-view-title');
+  const badgeEl = document.getElementById('article-view-badge');
+  const timeEl = document.getElementById('article-view-readtime');
+  const breadcrumbEl = document.getElementById('article-view-breadcrumb');
+  const contentEl = document.getElementById('article-view-content');
+
+  if (titleEl) titleEl.textContent = guide.title;
+  if (badgeEl) badgeEl.textContent = guide.badge;
+  if (timeEl) timeEl.textContent = guide.time;
+  if (breadcrumbEl) breadcrumbEl.textContent = guide.badge + ' Detail';
+  if (contentEl) contentEl.innerHTML = guide.html;
+
+  // Toggle View
+  const gridView = document.getElementById('resources-grid-view');
+  const articleView = document.getElementById('resources-article-view');
+  if (gridView) gridView.style.display = 'none';
+  if (articleView) articleView.style.display = 'block';
+
+  // Smooth scroll up to article top
+  const target = document.getElementById('page-resources');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Update browser URL bar
+  if (window.history && window.history.pushState) {
+    const newUrl = basePath + '/landlord-resources?guide=' + encodeURIComponent(id);
+    window.history.pushState({ page: 'resources', guide: id }, guide.title, newUrl);
   }
 }
 
-function closeGuideModal() {
-  const modal = document.getElementById('modal-guide');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+function closeGuideArticle() {
+  const gridView = document.getElementById('resources-grid-view');
+  const articleView = document.getElementById('resources-article-view');
+  if (articleView) articleView.style.display = 'none';
+  if (gridView) gridView.style.display = 'block';
+
+  const target = document.getElementById('page-resources');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+  if (window.history && window.history.pushState) {
+    window.history.pushState({ page: 'resources' }, "Landlord Guides & Compliance Resources", basePath + '/landlord-resources');
+  }
+}
+
+function openGuideModal(id) {
+  // If user clicks modal or article, open in rich article view
+  openGuideArticle(id);
+}
+
+function closeGuideModal() {
+  closeGuideArticle();
 }
 
 /* ── Legal & Compliance Interactive Modal ─────────────────── */
@@ -6721,6 +7147,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const initial = getPageFromUrl();
   if (initial.page !== 'home' || initial.anchor) {
     goTo(initial.page, initial.anchor, null, false);
+    if (initial.page === 'resources' && initial.guide && guidesData[initial.guide]) {
+      openGuideArticle(initial.guide);
+    }
   } else {
     initSlider('home');
     const meta = routeMap.home;
